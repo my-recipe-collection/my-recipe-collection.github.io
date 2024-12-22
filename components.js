@@ -11,8 +11,7 @@ const headerComponent = `
             <li><a href="breakfast.html">Breakfast | ארוחת בוקר</a></li>
             <li><a href="lunch.html">Lunch | ארוחת צהריים</a></li>
             <li><a href="dinner.html">Dinner | ארוחת ערב</a></li>
-            <li><a href="cakes-cookies.html">Cakes & Cookies | עוגות ועוגיות</a></li>
-            <li><a href="snacks.html">Snacks | חטיפים</a></li>
+            <li><a href="baking.html">Baking | אפיה </a></li>
             <li><a href="all-recipes.html">All Recipes | כל המתכונים</a></li>
         </ul>
     </nav>

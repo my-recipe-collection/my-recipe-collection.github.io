@@ -2,7 +2,7 @@
 const recipes = [
     {
     id: "homemade-donuts",
-    category: "snacks",
+    category: "baking",
     dateAdded: "2024-12-22",
     image: "/api/placeholder/400/300",
     title: {
@@ -30,7 +30,7 @@ const recipes = [
     },
     {
     id: "simple-cheesecake",
-    category: "cakes-cookies",
+    category: "baking",
     dateAdded: "2024-12-22",
     image: "/api/placeholder/400/300",
     title: {
@@ -44,7 +44,7 @@ const recipes = [
     },
     {
     id: "powdered-sugar-cookies",
-    category: "cakes-cookies",
+    category: "baking",
     dateAdded: "2024-12-13",
     image: "/api/placeholder/400/300",
     title: {
@@ -58,7 +58,7 @@ const recipes = [
 },
     {
         id: "white-chocolate-cookies",
-        category: "cakes-cookies",
+        category: "baking",
         dateAdded: "2024-12-20",
         image: "/api/placeholder/400/300",
         title: {
