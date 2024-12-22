@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shai's Recipes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary-color: #FF6B6B;
+            --secondary-color: #4ECDC4;
+            --accent-color: #FFE66D;
+            --text-color: #2C3E50;
+            --background-color: #F7F9FC;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            padding: 1rem;
+            text-align: center;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            animation: bounce 1s;
+        }
+
+        .nav {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+        }
+
+        .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .nav a:hover {
+            background-color: var(--accent-color);
+            color: var(--text-color);
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .recipe-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .recipe-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .recipe-card h3 {
+            color: var(--primary-color);
+            margin: 1rem 0;
+        }
+
+        .recipe-card p {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>🍳 Shai's Recipes 👨‍🍳</h1>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="breakfast.html">Breakfast</a></li>
+            <li><a href="lunch.html">Lunch</a></li>
+            <li><a href="dinner.html">Dinner</a></li>
+            <li><a href="desserts.html">Desserts</a></li>
+            <li><a href="snacks.html">Snacks</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <h2>Welcome to My Recipe Collection! 😋</h2>
+        <p>Hi! I'm Shai and these are my favorite recipes. I love cooking and want to share these amazing dishes with you!</p>
+
+        <div class="recipe-grid">
+            <article class="recipe-card">
+                <img src="/api/placeholder/400/300" alt="Pancakes">
+                <h3>Fluffy Pancakes</h3>
+                <p>Start your day with these super fluffy and delicious pancakes!</p>
+            </article>
+
+            <article class="recipe-card">
+                <img src="/api/placeholder/400/300" alt="Pasta">
+                <h3>Easy Mac and Cheese</h3>
+                <p>The cheesiest and most amazing mac and cheese ever!</p>
+            </article>
+
+            <article class="recipe-card">
+                <img src="/api/placeholder/400/300" alt="Cookies">
+                <h3>Chocolate Chip Cookies</h3>
+                <p>Soft, chewy, and full of chocolate chips!</p>
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Made with ❤️ by Shai | Copyright © 2024</p>
+    </footer>
+</body>
+</html>
