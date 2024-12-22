@@ -80,6 +80,48 @@
             flex: 1 0 auto;
         }
 
+        .search-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 1rem;
+            background: white;
+            padding: 0.5rem;
+            border-radius: 25px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-input {
+            flex: 1;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            outline: none;
+            border-radius: 20px;
+        }
+
+        .search-input::placeholder {
+            color: #999;
+        }
+
+        .search-button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-button:hover {
+            background-color: var(--secondary-color);
+        }
+
         .bilingual-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -94,6 +136,12 @@
         .hebrew-content {
             text-align: right;
             direction: rtl;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 2rem 0;
+            color: var(--primary-color);
         }
 
         .recipe-grid {
@@ -130,6 +178,12 @@
         .recipe-card p {
             color: var(--text-color);
             margin-bottom: 1rem;
+        }
+
+        .recipe-date {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
         }
 
         .footer {
@@ -185,45 +239,59 @@
             </div>
         </div>
 
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Search recipes | חיפוש מתכונים" />
+                <button class="search-button">🔍 Search | חיפוש</button>
+            </div>
+        </div>
+
+        <div class="section-title">
+            <h2>Latest Recipes | מתכונים אחרונים</h2>
+        </div>
+
         <div class="recipe-grid">
             <article class="recipe-card">
-                <img src="/api/placeholder/400/300" alt="Pancakes">
+                <img src="/api/placeholder/400/300" alt="Shakshuka">
+                <div class="recipe-date">December 20, 2024 | 20 דצמבר 2024</div>
                 <div class="bilingual-grid">
                     <div class="english-content">
-                        <h3>Fluffy Pancakes</h3>
-                        <p>Start your day with these super fluffy and delicious pancakes!</p>
+                        <h3>Classic Shakshuka</h3>
+                        <p>A delicious Israeli breakfast with eggs poached in tomato sauce!</p>
                     </div>
                     <div class="hebrew-content">
-                        <h3>פנקייק פלאפי</h3>
-                        <p>התחילו את היום עם פנקייק רך ומושלם!</p>
+                        <h3>שקשוקה קלאסית</h3>
+                        <p>ארוחת בוקר ישראלית טעימה עם ביצים מבושלות ברוטב עגבניות!</p>
                     </div>
                 </div>
             </article>
 
             <article class="recipe-card">
-                <img src="/api/placeholder/400/300" alt="Pasta">
+                <img src="/api/placeholder/400/300" alt="Hummus">
+                <div class="recipe-date">December 19, 2024 | 19 דצמבר 2024</div>
                 <div class="bilingual-grid">
                     <div class="english-content">
-                        <h3>Easy Mac and Cheese</h3>
-                        <p>The cheesiest and most amazing mac and cheese ever!</p>
+                        <h3>Creamy Hummus</h3>
+                        <p>The perfect hummus recipe - smooth, creamy, and delicious!</p>
                     </div>
                     <div class="hebrew-content">
-                        <h3>מקרוני וגבינה</h3>
-                        <p>המקרוני וגבינה הכי גבינתי ומדהים שיש!</p>
+                        <h3>חומוס קרמי</h3>
+                        <p>מתכון לחומוס מושלם - חלק, קרמי וטעים!</p>
                     </div>
                 </div>
             </article>
 
             <article class="recipe-card">
-                <img src="/api/placeholder/400/300" alt="Cookies">
+                <img src="/api/placeholder/400/300" alt="Challah">
+                <div class="recipe-date">December 18, 2024 | 18 דצמבר 2024</div>
                 <div class="bilingual-grid">
                     <div class="english-content">
-                        <h3>Chocolate Chip Cookies</h3>
-                        <p>Soft, chewy, and full of chocolate chips!</p>
+                        <h3>Fresh Challah</h3>
+                        <p>Homemade challah bread - perfect for Shabbat!</p>
                     </div>
                     <div class="hebrew-content">
-                        <h3>עוגיות שוקולד צ'יפס</h3>
-                        <p>רכות, נימוחות ומלאות בשבבי שוקולד!</p>
+                        <h3>חלה טרייה</h3>
+                        <p>חלת שבת ביתית - מושלמת לשבת!</p>
                     </div>
                 </div>
             </article>
