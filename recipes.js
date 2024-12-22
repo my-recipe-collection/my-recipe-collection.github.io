@@ -16,7 +16,7 @@ const recipes = [
     },
     {
         id: "sriracha-honey-chicken",
-        category: "dinner",
+        category: "mains",
         dateAdded: "2024-12-22",
         image: "/api/placeholder/400/300",
         title: {
