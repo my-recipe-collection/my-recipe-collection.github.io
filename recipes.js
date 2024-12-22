@@ -1,6 +1,20 @@
 // recipes.js
 const recipes = [
     {
+    id: "powdered-sugar-cookies",
+    category: "cakes-cookies",
+    dateAdded: "2024-12-22",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Easy Powdered Sugar Cookies",
+        he: "עוגיות אבקת סוכר קלות"
+    },
+    description: {
+        en: "Simple, delicious cookies made with powdered sugar - no margarine needed!",
+        he: "עוגיות פשוטות וטעימות עם אבקת סוכר - ללא מרגרינה!"
+    }
+},
+    {
         id: "white-chocolate-cookies",
         category: "cakes-cookies",
         dateAdded: "2024-12-22",
