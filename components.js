@@ -177,3 +177,50 @@ function loadComponents() {
     if (headerPlaceholder) {
         headerPlaceholder.innerHTML = headerComponent;
     }
+    // Load footer
+    const footerPlaceholder = document.querySelector('#footer-placeholder');
+    if (footerPlaceholder) {
+        footerPlaceholder.innerHTML = footerComponent;
+    }
+
+    // Highlight current page in navigation
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.nav a');
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.style.backgroundColor = 'var(--accent-color)';
+            link.style.color = 'var(--text-color)';
+        }
+    });
+
+    // Initialize recipe page features if we're on a recipe page
+    if (document.querySelector('.recipe-header')) {
+        addPrintButton();
+        enableCookingMode();
+        
+        // Add timers to instruction steps that mention time
+        document.querySelectorAll('.instruction-step').forEach(step => {
+            const text = step.textContent;
+            const timeMatch = text.match(/(\d+)[\s-]*(minutes|mins|דקות)/i);
+            if (timeMatch) {
+                const minutes = parseInt(timeMatch[1]);
+                const timer = new RecipeTimer(minutes, () => {
+                    alert('Timer finished! | הטיימר הסתיים!');
+                });
+                const timerBtn = document.createElement('button');
+                timerBtn.className = 'timer-button';
+                timerBtn.innerHTML = '⏰ Start Timer | התחל טיימר';
+                timerBtn.onclick = () => step.appendChild(timer.element);
+                step.appendChild(timerBtn);
+            }
+        });
+    }
+}
+
+// Export for modules
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { headerComponent, footerComponent, loadComponents };
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', loadComponents);
