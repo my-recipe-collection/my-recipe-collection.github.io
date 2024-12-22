@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Lunch | ארוחת צהריים - Shai's Recipes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles.css?v=1.0">
+</head>
+<body>
+   <div id="header-placeholder"></div>
+
+    <main class="main-content">
+        <div class="bilingual-grid">
+            <!-- English Content -->
+            <div class="english-content">
+                <h2>Lunch Recipes</h2>
+                <p>Perfect recipes for a delicious lunch!</p>
+            </div>
+            
+            <!-- Hebrew Content -->
+            <div class="hebrew-content">
+                <h2>מתכוני ארוחת צהריים</h2>
+                <p>מתכונים מושלמים לארוחת צהריים טעימה!</p>
+            </div>
+        </div>
+
+        <div class="recipe-grid">
+            <!-- Recipes will be populated by JavaScript -->
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="recipes.js?v=1.0"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            populateCategoryPage('lunch');
+        });
+    </script>
+    <script src="components.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', loadComponents);
+    </script>
+</body>
+</html>
