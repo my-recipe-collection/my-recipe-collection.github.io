@@ -17,14 +17,23 @@
         <div class="bilingual-grid">
             <div class="english-content">
                 <h2>All Recipes</h2>
+                <p>Browse all recipes</p>
             </div>
             <div class="hebrew-content">
                 <h2>כל המתכונים</h2>
+                <p>עיינו בכל המתכונים</p>
             </div>
         </div>
 
-        <div class="recipe-grid">
-            <!-- Recipes will be populated here by recipes.js -->
+        <div class="recipe-list">
+            <div class="bilingual-grid">
+                <div class="english-content">
+                    <ul id="recipes-en"></ul>
+                </div>
+                <div class="hebrew-content">
+                    <ul id="recipes-he"></ul>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -35,8 +44,64 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             loadComponents();
-            initializeSearch(); // This will be handled by the updated recipes.js
+            
+            // Sort all recipes alphabetically by English title
+            const sortedRecipes = [...recipes].sort((a, b) => 
+                a.title.en.localeCompare(b.title.en)
+            );
+
+            // Populate English list
+            const recipesEnList = document.getElementById('recipes-en');
+            sortedRecipes.forEach(recipe => {
+                const li = document.createElement('li');
+                li.innerHTML = `<a href="${recipe.id}.html">${recipe.title.en}</a>`;
+                recipesEnList.appendChild(li);
+            });
+
+            // Populate Hebrew list
+            const recipesHeList = document.getElementById('recipes-he');
+            sortedRecipes.forEach(recipe => {
+                const li = document.createElement('li');
+                li.innerHTML = `<a href="${recipe.id}.html">${recipe.title.he}</a>`;
+                recipesHeList.appendChild(li);
+            });
         });
     </script>
+
+    <style>
+        .recipe-list {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .recipe-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .recipe-list li {
+            margin: 0.5rem 0;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .recipe-list li:last-child {
+            border-bottom: none;
+        }
+
+        .recipe-list a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .recipe-list a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+    </style>
 </body>
 </html>
