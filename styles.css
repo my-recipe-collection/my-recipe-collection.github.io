@@ -279,60 +279,62 @@ img {
 
 /* Print Styles */
 @media print {
-    /* Hide everything except recipe content */
-    body * {
-        display: none !important;
-    }
-
-    .main-content,
-    .recipe-header,
-    .ingredients-section,
-    .instructions-section,
-    .main-content * {
-        display: block !important;
-    }
-
-    /* Hide navigation buttons and other interactive elements */
-    .nav,
-    .footer,
-    .print-button,
-    .recipe-meta,
-    .tips-section {
-        display: none !important;
-    }
-
-    /* Add website name at the top */
-    .main-content::before {
-        content: "🍳 Shai's Recipes | המתכונים של שי 👨‍🍳";
-        display: block !important;
-        text-align: center;
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 2rem;
-        padding-bottom: 1rem;
-        border-bottom: 2px solid #000;
-    }
-
-    /* Style recipe content for print */
-    .recipe-header {
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-
-    .ingredients-section,
-    .instructions-section {
-        page-break-inside: avoid;
-        margin: 2rem 0;
-    }
-
-    /* Remove any background colors and shadows */
+    /* Reset all margins and padding */
     * {
-        background: white !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: none !important;
         box-shadow: none !important;
+        border: none !important;
     }
 
-    /* Ensure text is black for better printing */
-    body {
-        color: black;
+    /* Hide unnecessary elements */
+    .nav, .footer, .print-button, .recipe-meta, .tips-section {
+        display: none !important;
+    }
+
+    /* Basic layout */
+    .main-content {
+        margin: 0 auto !important;
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    /* Site title */
+    .main-content::before {
+        content: "Shai's Recipes | המתכונים של שי";
+        display: block !important;
+        text-align: center;
+        font-size: 16pt;
+        margin-bottom: 10pt !important;
+    }
+
+    /* Recipe title */
+    .recipe-header h1 {
+        font-size: 14pt;
+        margin: 10pt 0 !important;
+        text-align: center;
+    }
+
+    /* Sections */
+    .ingredients-section, .instructions-section {
+        margin: 10pt 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Lists */
+    .ingredient-list, .instruction-step {
+        margin: 5pt 0 !important;
+    }
+
+    .ingredient-list li, .instruction-step {
+        margin-bottom: 3pt !important;
+    }
+
+    /* Grid layout for bilingual content */
+    .bilingual-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 20pt !important;
     }
 }
