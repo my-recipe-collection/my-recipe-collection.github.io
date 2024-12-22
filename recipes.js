@@ -1,6 +1,20 @@
 // recipes.js
 const recipes = [
     {
+    id: "homemade-donuts",
+    category: "snacks",
+    dateAdded: "2024-12-22",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Homemade Donuts",
+        he: "סופגניות ביתיות"
+    },
+    description: {
+        en: "Fluffy, homemade donuts with a perfect golden crust!",
+        he: "סופגניות ביתיות אווריריות עם קראסט זהוב מושלם!"
+    }
+    },
+    {
         id: "sriracha-honey-chicken",
         category: "dinner",
         dateAdded: "2024-12-22",
