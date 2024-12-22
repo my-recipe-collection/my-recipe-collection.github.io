@@ -37,6 +37,7 @@ function formatDate(dateStr) {
         month: 'long', 
         day: 'numeric' 
     });
+}
 
 function createRecipeCard(recipe) {
     return `
