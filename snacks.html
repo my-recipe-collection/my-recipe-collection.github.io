@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Snacks | חטיפים - Shai's Recipes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles.css?v=1.0"> 
+</head>
+<body>
+    <header class="header">
+        <h1>🍳 Shai's Recipes | המתכונים של שי 👨‍🍳</h1>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html">Home | בית</a></li>
+            <li><a href="breakfast.html">Breakfast | ארוחת בוקר</a></li>
+            <li><a href="lunch.html">Lunch | ארוחת צהריים</a></li>
+            <li><a href="dinner.html">Dinner | ארוחת ערב</a></li>
+            <li><a href="cakes-cookies.html">Cakes & Cookies | עוגות ועוגיות</a></li>
+            <li><a href="snacks.html">Snacks | חטיפים</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <div class="bilingual-grid">
+            <!-- English Content -->
+            <div class="english-content">
+                <h2>Tasty Snacks</h2>
+                <p>Delicious homemade snacks for any time of day!</p>
+            </div>
+            
+            <!-- Hebrew Content -->
+            <div class="hebrew-content">
+                <h2>חטיפים טעימים</h2>
+                <p>חטיפים ביתיים טעימים לכל שעות היום!</p>
+            </div>
+        </div>
+
+        <div class="recipe-grid">
+            <!-- This will be populated by recipes.js -->
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Shai | שי | Copyright © 2024</p>
+    </footer>
+    <script src="recipes.js?v=1.0"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        populateCategoryPage('snacks'); // This matches the category name in recipes.js
+    });
+</script>
+</body>
+      </html>
