@@ -1,6 +1,20 @@
 // recipes.js
 const recipes = [
     {
+    id: "simple-cheesecake",
+    category: "cakes-cookies",
+    dateAdded: "2024-12-22",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Simple Israeli Cheesecake",
+        he: "עוגת גבינה פשוטה"
+    },
+    description: {
+        en: "Classic Israeli-style cheesecake made with white cheese - perfect for any occasion!",
+        he: "עוגת גבינה קלאסית בסגנון ישראלי - מושלמת לכל אירוע!"
+    }
+    },
+    {
     id: "powdered-sugar-cookies",
     category: "cakes-cookies",
     dateAdded: "2024-12-13",
