@@ -289,7 +289,7 @@ img {
     }
 
     /* Hide unnecessary elements */
-    .nav, .footer, .print-button, .recipe-meta, .tips-section {
+    .nav, .footer, .print-button, .recipe-meta, .tips-section, #header-placeholder {
         display: none !important;
     }
 
@@ -300,13 +300,15 @@ img {
         max-width: none !important;
     }
 
-    /* Site title */
+    /* Only show site title once at the top */
     .main-content::before {
-        content: "Shai's Recipes | המתכונים של שי";
+        content: "🍳 Shai's Recipes | המתכונים של שי";
         display: block !important;
         text-align: center;
         font-size: 16pt;
         margin-bottom: 10pt !important;
+        border-bottom: 1pt solid black !important;
+        padding-bottom: 5pt !important;
     }
 
     /* Recipe title */
@@ -336,5 +338,10 @@ img {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
         gap: 20pt !important;
+    }
+    
+    /* Remove header image in print */
+    .recipe-header img {
+        display: none !important;
     }
 }
