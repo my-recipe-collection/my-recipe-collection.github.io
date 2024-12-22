@@ -222,6 +222,10 @@ body {
     flex-shrink: 0;
 }
 
+img {
+    display: none;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav ul {
