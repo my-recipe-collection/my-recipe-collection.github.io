@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
 :root {
     --primary-color: darkcyan;
@@ -6,8 +6,7 @@
     --accent-color: #FFE66D;
     --text-color: #2C3E50;
     --background-color: #F7F9FC;
-    --english-font: 'Quicksand', sans-serif;
-    --hebrew-font: 'Varela Round', sans-serif;
+    --font: 'Varela Round', sans-serif;
 }
 
 html, body {
@@ -17,7 +16,7 @@ html, body {
 }
 
 body {
-    font-family: var(--english-font);
+    font-family: var(--font);
     background-color: var(--background-color);
     color: var(--text-color);
     display: flex;
@@ -36,12 +35,10 @@ body {
     font-size: 2.5rem;
     margin: 0;
     animation: bounce 1s;
-    font-family: var(--english-font);
     font-weight: 700;
 }
 
 h1, h2, h3, h4 {
-    font-family: var(--english-font);
     font-weight: 600;
 }
 
@@ -49,7 +46,6 @@ h1, h2, h3, h4 {
 .hebrew-content h2,
 .hebrew-content h3,
 .hebrew-content h4 {
-    font-family: var(--hebrew-font);
 }
 
 .nav {
@@ -73,13 +69,7 @@ h1, h2, h3, h4 {
     text-align: center;
     gap: 0.25rem;
     min-width: 120px;
-    font-family: var(--english-font);
 }
-
-.hebrew-content .nav a {
-    font-family: var(--hebrew-font);
-}
-
 
 .nav a:hover {
     background-color: var(--accent-color);
@@ -118,7 +108,6 @@ h1, h2, h3, h4 {
 .hebrew-content {
     text-align: right;
     direction: rtl;
-    font-family: var(--hebrew-font);
 }
 
 /* Recipe Cards */
