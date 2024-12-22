@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>All Recipes | כל המתכונים - Shai's Recipes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>🍳 Shai's Recipes | המתכונים של שי 👨‍🍳</h1>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html">Home | בית</a></li>
+            <li><a href="breakfast.html">Breakfast | ארוחת בוקר</a></li>
+            <li><a href="lunch.html">Lunch | ארוחת צהריים</a></li>
+            <li><a href="dinner.html">Dinner | ארוחת ערב</a></li>
+            <li><a href="cakes-cookies.html">Cakes & Cookies | עוגות ועוגיות</a></li>
+            <li><a href="snacks.html">Snacks | חטיפים</a></li>
+            <li><a href="all-recipes.html">All Recipes | כל המתכונים</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <div class="bilingual-grid">
+            <div class="english-content">
+                <h2>All Recipes</h2>
+                <p>Browse all recipes by category</p>
+            </div>
+            <div class="hebrew-content">
+                <h2>כל המתכונים</h2>
+                <p>עיינו בכל המתכונים לפי קטגוריה</p>
+            </div>
+        </div>
+
+        <div id="recipe-categories">
+            <!-- Categories will be populated by JavaScript -->
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Shai | שי | Copyright © 2024</p>
+    </footer>
+
+    <script src="recipes.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const categories = {
+                'breakfast': {en: 'Breakfast', he: 'ארוחת בוקר'},
+                'lunch': {en: 'Lunch', he: 'ארוחת צהריים'},
+                'dinner': {en: 'Dinner', he: 'ארוחת ערב'},
+                'cakes-cookies': {en: 'Cakes & Cookies', he: 'עוגות ועוגיות'},
+                'snacks': {en: 'Snacks', he: 'חטיפים'}
+            };
+
+            const categoriesContainer = document.getElementById('recipe-categories');
+            
+            // Group recipes by category
+            const recipesByCategory = recipes.reduce((acc, recipe) => {
+                if (!acc[recipe.category]) {
+                    acc[recipe.category] = [];
+                }
+                acc[recipe.category].push(recipe);
+                return acc;
+            }, {});
+
+            // Sort recipes within each category alphabetically by English title
+            Object.keys(recipesByCategory).forEach(category => {
+                recipesByCategory[category].sort((a, b) => 
+                    a.title.en.localeCompare(b.title.en)
+                );
+            });
+
+            // Create HTML for each category
+            Object.keys(categories).forEach(category => {
+                if (recipesByCategory[category] && recipesByCategory[category].length > 0) {
+                    const categoryHtml = `
+                        <div class="recipe-category">
+                            <div class="bilingual-grid">
+                                <div class="english-content">
+                                    <h3>${categories[category].en}</h3>
+                                    <ul>
+                                        ${recipesByCategory[category].map(recipe => `
+                                            <li><a href="${recipe.id}.html">${recipe.title.en}</a></li>
+                                        `).join('')}
+                                    </ul>
+                                </div>
+                                <div class="hebrew-content">
+                                    <h3>${categories[category].he}</h3>
+                                    <ul>
+                                        ${recipesByCategory[category].map(recipe => `
+                                            <li><a href="${recipe.id}.html">${recipe.title.he}</a></li>
+                                        `).join('')}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    categoriesContainer.insertAdjacentHTML('beforeend', categoryHtml);
+                }
+            });
+        });
+    </script>
+
+    <style>
+        .recipe-category {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .recipe-category ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .recipe-category li {
+            margin: 0.5rem 0;
+        }
+
+        .recipe-category a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .recipe-category a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+    </style>
+</body>
+  </html>
