@@ -3,7 +3,7 @@ const recipes = [
     {
     id: "powdered-sugar-cookies",
     category: "cakes-cookies",
-    dateAdded: "2024-12-22",
+    dateAdded: "2024-12-13",
     image: "/api/placeholder/400/300",
     title: {
         en: "Easy Powdered Sugar Cookies",
@@ -17,7 +17,7 @@ const recipes = [
     {
         id: "white-chocolate-cookies",
         category: "cakes-cookies",
-        dateAdded: "2024-12-22",
+        dateAdded: "2024-12-20",
         image: "/api/placeholder/400/300",
         title: {
             en: "White Chocolate Chip Cookies",
