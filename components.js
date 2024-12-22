@@ -7,12 +7,12 @@ const headerComponent = `
 
     <nav class="nav">
         <ul>
-            <li><a href="index.html">Home | בית</a></li>
-            <li><a href="breakfast.html">Breakfast | ארוחת בוקר</a></li>
-            <li><a href="mains.html">Main Dishes | מנות עיקריות</a></li>
-            <li><a href="sides.html">Side Dishes | תוספות</a></li>
-            <li><a href="baking.html">Baking | אפיה</a></li>
-            <li><a href="all-recipes.html">All Recipes | כל המתכונים</a></li>
+            <li><a href="index.html"><span>Home</span><span>בית</span></a></li>
+            <li><a href="breakfast.html"><span>Breakfast</span><span>ארוחת בוקר</span></a></li>
+            <li><a href="mains.html"><span>Main Dishes</span><span>מנות עיקריות</span></a></li>
+            <li><a href="sides.html"><span>Side Dishes</span><span>תוספות</span></a></li>
+            <li><a href="baking.html"><span>Baking</span><span>אפיה</span></a></li>
+            <li><a href="all-recipes.html"><span>All Recipes</span><span>כל המתכונים</span></a></li>
         </ul>
     </nav>
 `;
