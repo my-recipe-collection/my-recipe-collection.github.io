@@ -1,45 +1,17 @@
 // recipes.js
 const recipes = [
     {
-        id: "shakshuka",
-        category: "breakfast",
-        dateAdded: "2024-12-20",
-        image: "/api/placeholder/400/300",
-        title: {
-            en: "Classic Shakshuka",
-            he: "שקשוקה קלאסית"
-        },
-        description: {
-            en: "A delicious Israeli breakfast with eggs poached in tomato sauce!",
-            he: "ארוחת בוקר ישראלית טעימה עם ביצים מבושלות ברוטב עגבניות!"
-        }
-    },
-    {
-        id: "hummus",
-        category: "snacks",
-        dateAdded: "2024-12-19",
-        image: "/api/placeholder/400/300",
-        title: {
-            en: "Creamy Hummus",
-            he: "חומוס קרמי"
-        },
-        description: {
-            en: "The perfect hummus recipe - smooth, creamy, and delicious!",
-            he: "מתכון לחומוס מושלם - חלק, קרמי וטעים!"
-        }
-    },
-    {
-        id: "chocolate-chip-cookies",
+        id: "white-chocolate-chip-cookies",
         category: "cakes-cookies",
-        dateAdded: "2024-12-18",
+        dateAdded: "2024-12-22",
         image: "/api/placeholder/400/300",
         title: {
-            en: "Chocolate Chip Cookies",
-            he: "עוגיות שוקולד צ׳יפס"
+            en: "White Chocolate Chip Cookies",
+            he: "עוגיות שוקולד צ׳פס לבן"
         },
         description: {
-            en: "Classic chewy chocolate chip cookies that melt in your mouth!",
-            he: "עוגיות שוקולד צ׳יפס קלאסיות ונימוחות שנמסות בפה!"
+            en: "White chocolate chip cookies that melt in your mouth!",
+            he: "עוגיות שוקולד צ׳יפס לבן שנמסות בפה!"
         }
     }
 ];
