@@ -77,8 +77,9 @@ function populateRecentRecipes() {
 function populateCategoryPage(category) {
     const categoryContainer = document.querySelector('.recipe-grid');
     if (!categoryContainer) return;
-
-    const categoryRecipes = recipes.filter(recipe => recipe.category === category);
+    const categoryRecipes = recipes
+        .filter(recipe => recipe.category === category)
+        .sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
     categoryContainer.innerHTML = categoryRecipes
         .map(recipe => createRecipeCard(recipe))
         .join('');
