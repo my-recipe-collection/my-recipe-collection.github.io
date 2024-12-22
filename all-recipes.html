@@ -7,7 +7,6 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>All Recipes | כל המתכונים - Shai's Recipes</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,12 +16,14 @@
         <div class="bilingual-grid">
             <div class="english-content">
                 <h2>All Recipes</h2>
-                <p>Browse all recipes</p>
             </div>
             <div class="hebrew-content">
                 <h2>כל המתכונים</h2>
-                <p>עיינו בכל המתכונים</p>
             </div>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search recipes | חיפוש מתכונים" class="search-input">
         </div>
 
         <div class="recipe-list">
@@ -50,25 +51,63 @@
                 a.title.en.localeCompare(b.title.en)
             );
 
-            // Populate English list
-            const recipesEnList = document.getElementById('recipes-en');
-            sortedRecipes.forEach(recipe => {
-                const li = document.createElement('li');
-                li.innerHTML = `<a href="${recipe.id}.html">${recipe.title.en}</a>`;
-                recipesEnList.appendChild(li);
-            });
+            function displayRecipes(filteredRecipes) {
+                // Populate English list
+                const recipesEnList = document.getElementById('recipes-en');
+                recipesEnList.innerHTML = '';
+                filteredRecipes.forEach(recipe => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<a href="${recipe.id}.html">${recipe.title.en}</a>`;
+                    recipesEnList.appendChild(li);
+                });
 
-            // Populate Hebrew list
-            const recipesHeList = document.getElementById('recipes-he');
-            sortedRecipes.forEach(recipe => {
-                const li = document.createElement('li');
-                li.innerHTML = `<a href="${recipe.id}.html">${recipe.title.he}</a>`;
-                recipesHeList.appendChild(li);
+                // Populate Hebrew list
+                const recipesHeList = document.getElementById('recipes-he');
+                recipesHeList.innerHTML = '';
+                filteredRecipes.forEach(recipe => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<a href="${recipe.id}.html">${recipe.title.he}</a>`;
+                    recipesHeList.appendChild(li);
+                });
+            }
+
+            // Initial display
+            displayRecipes(sortedRecipes);
+
+            // Search functionality
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                const filteredRecipes = sortedRecipes.filter(recipe => 
+                    recipe.title.en.toLowerCase().includes(searchTerm) || 
+                    recipe.title.he.includes(searchTerm)
+                );
+                displayRecipes(filteredRecipes);
             });
         });
     </script>
 
     <style>
+        .search-container {
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .search-input {
+            width: 100%;
+            max-width: 400px;
+            padding: 0.8rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 20px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: var(--secondary-color);
+        }
+
         .recipe-list {
             background: white;
             border-radius: 15px;

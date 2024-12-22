@@ -128,50 +128,7 @@ function populateCategoryPage(category) {
         .join('');
 }
 
-// Search functionality for all-recipes page
-function initializeSearch() {
-    if (window.location.pathname.includes('all-recipes.html')) {
-        const mainContent = document.querySelector('.main-content');
-        const searchBox = document.createElement('div');
-        searchBox.className = 'search-container';
-        searchBox.innerHTML = `
-            <input type="text" 
-                   id="recipe-search" 
-                   placeholder="Search recipes | חיפוש מתכונים"
-                   class="recipe-search">
-        `;
-        
-        const recipeGrid = document.querySelector('.recipe-grid');
-        mainContent.insertBefore(searchBox, recipeGrid);
-
-        const searchInput = document.getElementById('recipe-search');
-        searchInput.addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase();
-            const filteredRecipes = recipes
-                .filter(recipe => 
-                    recipe.title.en.toLowerCase().includes(searchTerm) ||
-                    recipe.title.he.toLowerCase().includes(searchTerm) ||
-                    recipe.description.en.toLowerCase().includes(searchTerm) ||
-                    recipe.description.he.toLowerCase().includes(searchTerm)
-                )
-                .sort((a, b) => a.title.en.localeCompare(b.title.en));
-
-            recipeGrid.innerHTML = filteredRecipes
-                .map(recipe => createRecipeCard(recipe))
-                .join('');
-        });
-
-        // Initial population of all recipes in alphabetical order
-        const sortedRecipes = [...recipes].sort((a, b) => 
-            a.title.en.localeCompare(b.title.en));
-        recipeGrid.innerHTML = sortedRecipes
-            .map(recipe => createRecipeCard(recipe))
-            .join('');
-    }
-}
-
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
-    initializeSearch();
     populateRecentRecipes();
 });
