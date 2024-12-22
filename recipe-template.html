@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Shakshuka | שקשוקה קלאסית - Shai's Recipes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary-color: darkcyan;
+            --secondary-color: #4ECDC4;
+            --accent-color: #FFE66D;
+            --text-color: #2C3E50;
+            --background-color: #F7F9FC;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            padding: 1rem;
+            text-align: center;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            animation: bounce 1s;
+        }
+
+        .nav {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .nav a:hover {
+            background-color: var(--accent-color);
+            color: var(--text-color);
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            flex: 1 0 auto;
+        }
+
+        .recipe-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .recipe-header img {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin: 1rem 0;
+        }
+
+        .recipe-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .bilingual-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .english-content {
+            text-align: left;
+        }
+
+        .hebrew-content {
+            text-align: right;
+            direction: rtl;
+        }
+
+        .ingredients-section, .instructions-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .ingredient-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .ingredient-list li {
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .instruction-step {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .instruction-step h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .tips-section {
+            background: #fff3cd;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: auto;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .bilingual-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>🍳 Shai's Recipes | המתכונים של שי 👨‍🍳</h1>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html">Home | בית</a></li>
+            <li><a href="breakfast.html">Breakfast | ארוחת בוקר</a></li>
+            <li><a href="lunch.html">Lunch | ארוחת צהריים</a></li>
+            <li><a href="dinner.html">Dinner | ארוחת ערב</a></li>
+            <li><a href="desserts.html">Desserts | קינוחים</a></li>
+            <li><a href="snacks.html">Snacks | חטיפים</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <div class="recipe-header">
+            <img src="/api/placeholder/800/400" alt="Classic Shakshuka">
+            
+            <div class="bilingual-grid">
+                <div class="english-content">
+                    <h1>Classic Shakshuka</h1>
+                </div>
+                <div class="hebrew-content">
+                    <h1>שקשוקה קלאסית</h1>
+                </div>
+            </div>
+
+            <div class="recipe-meta">
+                <div class="meta-item">⏰ 30 mins | דקות</div>
+                <div class="meta-item">👨‍🍳 Easy | קל</div>
+                <div class="meta-item">🍽️ Serves 4 | מנות 4</div>
+            </div>
+        </div>
+
+        <div class="ingredients-section">
+            <div class="bilingual-grid">
+                <div class="english-content">
+                    <h2>Ingredients</h2>
+                    <ul class="ingredient-list">
+                        <li>6 eggs</li>
+                        <li>4 large tomatoes, diced</li>
+                        <li>2 red bell peppers, chopped</li>
+                        <li>1 onion, finely chopped</li>
+                        <li>4 cloves garlic, minced</li>
+                        <li>2 tbsp olive oil</li>
+                        <li>1 tsp paprika</li>
+                        <li>1 tsp cumin</li>
+                        <li>Salt and pepper to taste</li>
+                    </ul>
+                </div>
+                <div class="hebrew-content">
+                    <h2>מצרכים</h2>
+                    <ul class="ingredient-list">
+                        <li>6 ביצים</li>
+                        <li>4 עגבניות גדולות, קצוצות</li>
+                        <li>2 פלפלים אדומים, קצוצים</li>
+                        <li>1 בצל, קצוץ דק</li>
+                        <li>4 שיני שום, כתושות</li>
+                        <li>2 כפות שמן זית</li>
+                        <li>1 כפית פפריקה</li>
+                        <li>1 כפית כמון</li>
+                        <li>מלח ופלפל לפי הטעם</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions-section">
+            <div class="bilingual-grid">
+                <div class="english-content">
+                    <h2>Instructions</h2>
+                    <div class="instruction-step">
+                        <h4>Step 1</h4>
+                        <p>Heat olive oil in a large skillet. Add onions and peppers, cook until softened.</p>
+                    </div>
+                    <div class="instruction-step">
+                        <h4>Step 2</h4>
+                        <p>Add garlic, tomatoes, and spices. Simmer for 10-15 minutes until sauce thickens.</p>
+                    </div>
+                    <div class="instruction-step">
+                        <h4>Step 3</h4>
+                        <p>Create wells in the sauce and crack eggs into them. Cover and cook until eggs are set.</p>
+                    </div>
+                </div>
+                <div class="hebrew-content">
+                    <h2>הוראות הכנה</h2>
+                    <div class="instruction-step">
+                        <h4>שלב 1</h4>
+                        <p>חממו שמן זית במחבת גדולה. הוסיפו בצל ופלפלים, בשלו עד לריכוך.</p>
+                    </div>
+                    <div class="instruction-step">
+                        <h4>שלב 2</h4>
+                        <p>הוסיפו שום, עגבניות ותבלינים. בשלו על אש קטנה 10-15 דקות עד שהרוטב מסמיך.</p>
+                    </div>
+                    <div class="instruction-step">
+                        <h4>שלב 3</h4>
+                        <p>צרו גומות ברוטב ושברו לתוכן ביצים. כסו ובשלו עד שהביצים מוכנות.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <div class="bilingual-grid">
+                <div class="english-content">
+                    <h3>💡 Tips</h3>
+                    <p>Serve hot with fresh bread for dipping. For extra heat, add chili flakes or hot sauce!</p>
+                </div>
+                <div class="hebrew-content">
+                    <h3>💡 טיפים</h3>
+                    <p>הגישו חם עם לחם טרי לטבילה. לחריפות נוספת, הוסיפו פתיתי צ'ילי או רוטב חריף!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>❤️ Shai | שי | Copyright © 2024</p>
+    </footer>
+</body>
+</html>
