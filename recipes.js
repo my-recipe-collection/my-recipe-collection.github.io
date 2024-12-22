@@ -1,6 +1,20 @@
 // recipes.js
 const recipes = [
     {
+        id: "sriracha-honey-chicken",
+        category: "dinner",
+        dateAdded: "2024-12-22",
+        image: "/api/placeholder/400/300",
+        title: {
+            en: "Mild Sriracha Honey Chicken",
+            he: "עוף בסריראצ'ה ודבש עדין"
+        },
+        description: {
+            en: "Kid-friendly sweet chicken with a hint of sriracha - perfect for the whole family!",
+            he: "עוף מתוק עם נגיעה של סריראצ'ה - מושלם לכל המשפחה!"
+        }
+    },
+    {
     id: "simple-cheesecake",
     category: "cakes-cookies",
     dateAdded: "2024-12-22",
