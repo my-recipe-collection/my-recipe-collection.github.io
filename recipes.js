@@ -32,18 +32,11 @@ const recipes = [
 
 function formatDate(dateStr) {
     const date = new Date(dateStr);
-    const enDate = date.toLocaleDateString('en-US', { 
+    return date.toLocaleDateString('en-US', { 
         year: 'numeric', 
         month: 'long', 
         day: 'numeric' 
     });
-    const heDate = date.toLocaleDateString('he-IL', { 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric' 
-    });
-    return `${enDate} | ${heDate}`;
-}
 
 function createRecipeCard(recipe) {
     return `
