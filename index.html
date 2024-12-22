@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shai's Recipes</title>
+    <title>Shai's Recipes | המתכונים של שי</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         :root {
@@ -80,6 +80,22 @@
             flex: 1 0 auto;
         }
 
+        .bilingual-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .english-content {
+            text-align: left;
+        }
+
+        .hebrew-content {
+            text-align: right;
+            direction: rtl;
+        }
+
         .recipe-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -131,52 +147,91 @@
                 text-align: center;
                 gap: 1rem;
             }
+
+            .bilingual-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <header class="header">
-        <h1>🍳 Shai's Recipes 👨‍🍳</h1>
+        <h1>🍳 Shai's Recipes | המתכונים של שי 👨‍🍳</h1>
     </header>
 
     <nav class="nav">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="breakfast.html">Breakfast</a></li>
-            <li><a href="lunch.html">Lunch</a></li>
-            <li><a href="dinner.html">Dinner</a></li>
-            <li><a href="desserts.html">Desserts</a></li>
-            <li><a href="snacks.html">Snacks</a></li>
+            <li><a href="index.html">Home | בית</a></li>
+            <li><a href="breakfast.html">Breakfast | ארוחת בוקר</a></li>
+            <li><a href="lunch.html">Lunch | ארוחת צהריים</a></li>
+            <li><a href="dinner.html">Dinner | ארוחת ערב</a></li>
+            <li><a href="desserts.html">Desserts | קינוחים</a></li>
+            <li><a href="snacks.html">Snacks | חטיפים</a></li>
         </ul>
     </nav>
 
     <main class="main-content">
-        <h2>Welcome to My Recipe Collection! 😋</h2>
-        <p>Hi! I'm Shai and these are my favorite recipes. I love cooking and want to share these amazing dishes with you!</p>
+        <div class="bilingual-grid">
+            <!-- English Content -->
+            <div class="english-content">
+                <h2>Welcome to My Recipe Collection! 😋</h2>
+                <p>Hi! I'm Shai and these are my favorite recipes. I love cooking and want to share these amazing dishes with you!</p>
+            </div>
+            
+            <!-- Hebrew Content -->
+            <div class="hebrew-content">
+                <h2>ברוכים הבאים לאוסף המתכונים שלי! 😋</h2>
+                <p>היי! אני שי ואלה המתכונים האהובים עליי. אני אוהב לבשל ורוצה לשתף אתכם במנות המדהימות האלה!</p>
+            </div>
+        </div>
 
         <div class="recipe-grid">
             <article class="recipe-card">
                 <img src="/api/placeholder/400/300" alt="Pancakes">
-                <h3>Fluffy Pancakes</h3>
-                <p>Start your day with these super fluffy and delicious pancakes!</p>
+                <div class="bilingual-grid">
+                    <div class="english-content">
+                        <h3>Fluffy Pancakes</h3>
+                        <p>Start your day with these super fluffy and delicious pancakes!</p>
+                    </div>
+                    <div class="hebrew-content">
+                        <h3>פנקייק פלאפי</h3>
+                        <p>התחילו את היום עם פנקייק רך ומושלם!</p>
+                    </div>
+                </div>
             </article>
 
             <article class="recipe-card">
                 <img src="/api/placeholder/400/300" alt="Pasta">
-                <h3>Easy Mac and Cheese</h3>
-                <p>The cheesiest and most amazing mac and cheese ever!</p>
+                <div class="bilingual-grid">
+                    <div class="english-content">
+                        <h3>Easy Mac and Cheese</h3>
+                        <p>The cheesiest and most amazing mac and cheese ever!</p>
+                    </div>
+                    <div class="hebrew-content">
+                        <h3>מקרוני וגבינה</h3>
+                        <p>המקרוני וגבינה הכי גבינתי ומדהים שיש!</p>
+                    </div>
+                </div>
             </article>
 
             <article class="recipe-card">
                 <img src="/api/placeholder/400/300" alt="Cookies">
-                <h3>Chocolate Chip Cookies</h3>
-                <p>Soft, chewy, and full of chocolate chips!</p>
+                <div class="bilingual-grid">
+                    <div class="english-content">
+                        <h3>Chocolate Chip Cookies</h3>
+                        <p>Soft, chewy, and full of chocolate chips!</p>
+                    </div>
+                    <div class="hebrew-content">
+                        <h3>עוגיות שוקולד צ'יפס</h3>
+                        <p>רכות, נימוחות ומלאות בשבבי שוקולד!</p>
+                    </div>
+                </div>
             </article>
         </div>
     </main>
 
     <footer class="footer">
-        <p>Made with ❤️ by Shai | Copyright © 2024</p>
+        <p>Made with ❤️ by Shai | נוצר באהבה על ידי שי | Copyright © 2024</p>
     </footer>
 </body>
 </html>
