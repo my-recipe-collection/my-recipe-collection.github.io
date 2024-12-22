@@ -72,7 +72,6 @@ const recipes = [
     }
 ];
 
-// Recipe Data Management
 function formatDate(dateStr) {
     const date = new Date(dateStr);
     return date.toLocaleDateString('en-US', { 
@@ -83,9 +82,6 @@ function formatDate(dateStr) {
 }
 
 function createRecipeCard(recipe) {
-    const avgRating = calculateAverageRating(recipe.ratings || []);
-    const ratingStars = '⭐'.repeat(Math.round(avgRating));
-    
     return `
     <article class="recipe-card">
         <a href="${recipe.id}.html">
@@ -101,16 +97,11 @@ function createRecipeCard(recipe) {
                     <p>${recipe.description.he}</p>
                 </div>
             </div>
-            <div class="recipe-rating" data-recipe-id="${recipe.id}">
-                ${ratingStars || '☆☆☆☆☆'}
-                <span class="rating-count">${recipe.ratings?.length || 0} ratings</span>
-            </div>
         </a>
     </article>
     `;
 }
 
-// Page Population Functions
 function populateRecentRecipes() {
     const recentRecipesContainer = document.querySelector('.recipe-grid');
     if (!recentRecipesContainer) return;
@@ -122,8 +113,6 @@ function populateRecentRecipes() {
     recentRecipesContainer.innerHTML = recentRecipes
         .map(recipe => createRecipeCard(recipe))
         .join('');
-    
-    initializeInteractiveFeatures();
 }
 
 function populateCategoryPage(category) {
@@ -137,131 +126,52 @@ function populateCategoryPage(category) {
     categoryContainer.innerHTML = categoryRecipes
         .map(recipe => createRecipeCard(recipe))
         .join('');
-    
-    initializeInteractiveFeatures();
 }
 
-// Search Functionality
-function searchRecipes(query) {
-    const searchTerm = query.toLowerCase();
-    const results = recipes.filter(recipe => 
-        recipe.title.en.toLowerCase().includes(searchTerm) ||
-        recipe.title.he.toLowerCase().includes(searchTerm) ||
-        recipe.description.en.toLowerCase().includes(searchTerm) ||
-        recipe.description.he.toLowerCase().includes(searchTerm)
-    );
-    
-    const container = document.querySelector('.recipe-grid');
-    if (container) {
-        container.innerHTML = results
+// Search functionality for all-recipes page
+function initializeSearch() {
+    if (window.location.pathname.includes('all-recipes.html')) {
+        const mainContent = document.querySelector('.main-content');
+        const searchBox = document.createElement('div');
+        searchBox.className = 'search-container';
+        searchBox.innerHTML = `
+            <input type="text" 
+                   id="recipe-search" 
+                   placeholder="Search recipes | חיפוש מתכונים"
+                   class="recipe-search">
+        `;
+        
+        const recipeGrid = document.querySelector('.recipe-grid');
+        mainContent.insertBefore(searchBox, recipeGrid);
+
+        const searchInput = document.getElementById('recipe-search');
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const filteredRecipes = recipes
+                .filter(recipe => 
+                    recipe.title.en.toLowerCase().includes(searchTerm) ||
+                    recipe.title.he.toLowerCase().includes(searchTerm) ||
+                    recipe.description.en.toLowerCase().includes(searchTerm) ||
+                    recipe.description.he.toLowerCase().includes(searchTerm)
+                )
+                .sort((a, b) => a.title.en.localeCompare(b.title.en));
+
+            recipeGrid.innerHTML = filteredRecipes
+                .map(recipe => createRecipeCard(recipe))
+                .join('');
+        });
+
+        // Initial population of all recipes in alphabetical order
+        const sortedRecipes = [...recipes].sort((a, b) => 
+            a.title.en.localeCompare(b.title.en));
+        recipeGrid.innerHTML = sortedRecipes
             .map(recipe => createRecipeCard(recipe))
-            .join('') || '<p>No recipes found | לא נמצאו מתכונים</p>';
+            .join('');
     }
-    
-    initializeInteractiveFeatures();
-}
-
-// Rating System
-function calculateAverageRating(ratings) {
-    if (!ratings || ratings.length === 0) return 0;
-    return ratings.reduce((sum, rating) => sum + rating, 0) / ratings.length;
-}
-
-function rateRecipe(recipeId, rating) {
-    const recipe = recipes.find(r => r.id === recipeId);
-    if (recipe) {
-        if (!recipe.ratings) recipe.ratings = [];
-        recipe.ratings.push(rating);
-        
-        // Update local storage
-        localStorage.setItem('recipeRatings', JSON.stringify(
-            recipes.reduce((acc, r) => ({
-                ...acc,
-                [r.id]: r.ratings
-            }), {})
-        ));
-        
-        // Update UI
-        const ratingElement = document.querySelector(`[data-recipe-id="${recipeId}"]`);
-        if (ratingElement) {
-            const avgRating = calculateAverageRating(recipe.ratings);
-            ratingElement.innerHTML = `
-                ${'⭐'.repeat(Math.round(avgRating))}
-                <span class="rating-count">${recipe.ratings.length} ratings</span>
-            `;
-        }
-    }
-}
-
-// Serving Size Adjustment
-let servingMultiplier = 1;
-
-function adjustServings(change) {
-    const newServings = Math.max(1, servingMultiplier + change);
-    if (newServings === servingMultiplier) return;
-    
-    servingMultiplier = newServings;
-    document.getElementById('servingCount').textContent = servingMultiplier;
-    
-    // Update ingredient quantities
-    document.querySelectorAll('.ingredient-list li').forEach(item => {
-        const originalText = item.getAttribute('data-original') || item.textContent;
-        if (!item.getAttribute('data-original')) {
-            item.setAttribute('data-original', originalText);
-        }
-        
-        const quantity = originalText.match(/^([\d./]+)/);
-        if (quantity) {
-            const originalQuantity = eval(quantity[1]);
-            const newQuantity = (originalQuantity * servingMultiplier).toFixed(2);
-            item.textContent = originalText.replace(/^[\d./]+/, newQuantity);
-        }
-    });
-}
-
-// Initialize Interactive Features
-function initializeInteractiveFeatures() {
-    // Add search if not exists
-    if (!document.getElementById('recipe-search')) {
-        const searchContainer = document.querySelector('.main-content');
-        if (searchContainer) {
-            const searchBox = document.createElement('div');
-            searchBox.className = 'search-box';
-            searchBox.innerHTML = `
-                <input type="text" id="recipe-search" 
-                    placeholder="Search recipes | חיפוש מתכונים"
-                    oninput="searchRecipes(this.value)">
-            `;
-            searchContainer.insertBefore(searchBox, searchContainer.firstChild);
-        }
-    }
-    
-    // Initialize ratings
-    document.querySelectorAll('.recipe-rating').forEach(ratingElement => {
-        const recipeId = ratingElement.dataset.recipeId;
-        ratingElement.onclick = (e) => {
-            e.preventDefault();
-            const rating = prompt('Rate this recipe (1-5) | דרג מתכון זה (1-5)', '5');
-            if (rating && !isNaN(rating) && rating >= 1 && rating <= 5) {
-                rateRecipe(recipeId, Number(rating));
-            }
-        };
-    });
-}
-
-// Load saved ratings from localStorage
-function loadSavedRatings() {
-    const savedRatings = JSON.parse(localStorage.getItem('recipeRatings') || '{}');
-    Object.entries(savedRatings).forEach(([recipeId, ratings]) => {
-        const recipe = recipes.find(r => r.id === recipeId);
-        if (recipe) recipe.ratings = ratings;
-    });
 }
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
-    loadSavedRatings();
-    if (document.querySelector('.recipe-grid')) {
-        initializeInteractiveFeatures();
-    }
+    initializeSearch();
+    populateRecentRecipes();
 });

@@ -17,112 +17,26 @@
         <div class="bilingual-grid">
             <div class="english-content">
                 <h2>All Recipes</h2>
-                <p>Browse all recipes by category</p>
             </div>
             <div class="hebrew-content">
                 <h2>כל המתכונים</h2>
-                <p>עיינו בכל המתכונים לפי קטגוריה</p>
             </div>
         </div>
 
-        <div id="recipe-categories">
-            <!-- Categories will be populated by JavaScript -->
+        <div class="recipe-grid">
+            <!-- Recipes will be populated here by recipes.js -->
         </div>
     </main>
 
-<div id="footer-placeholder"></div>
+    <div id="footer-placeholder"></div>
 
     <script src="recipes.js"></script>
+    <script src="components.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const categories = {
-                'breakfast': {en: 'Breakfast', he: 'ארוחת בוקר'},
-                'lunch': {en: 'Lunch', he: 'ארוחת צהריים'},
-                'dinner': {en: 'Dinner', he: 'ארוחת ערב'},
-                'baking': {en: 'Baking', he: 'אפיה'}
-            };
-
-            const categoriesContainer = document.getElementById('recipe-categories');
-            
-            // Group recipes by category
-            const recipesByCategory = recipes.reduce((acc, recipe) => {
-                if (!acc[recipe.category]) {
-                    acc[recipe.category] = [];
-                }
-                acc[recipe.category].push(recipe);
-                return acc;
-            }, {});
-
-            // Sort recipes within each category alphabetically by English title
-            Object.keys(recipesByCategory).forEach(category => {
-                recipesByCategory[category].sort((a, b) => 
-                    a.title.en.localeCompare(b.title.en)
-                );
-            });
-
-            // Create HTML for each category
-            Object.keys(categories).forEach(category => {
-                if (recipesByCategory[category] && recipesByCategory[category].length > 0) {
-                    const categoryHtml = `
-                        <div class="recipe-category">
-                            <div class="bilingual-grid">
-                                <div class="english-content">
-                                    <h3>${categories[category].en}</h3>
-                                    <ul>
-                                        ${recipesByCategory[category].map(recipe => `
-                                            <li><a href="${recipe.id}.html">${recipe.title.en}</a></li>
-                                        `).join('')}
-                                    </ul>
-                                </div>
-                                <div class="hebrew-content">
-                                    <h3>${categories[category].he}</h3>
-                                    <ul>
-                                        ${recipesByCategory[category].map(recipe => `
-                                            <li><a href="${recipe.id}.html">${recipe.title.he}</a></li>
-                                        `).join('')}
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                    categoriesContainer.insertAdjacentHTML('beforeend', categoryHtml);
-                }
-            });
+            loadComponents();
+            initializeSearch(); // This will be handled by the updated recipes.js
         });
     </script>
-
-    <style>
-        .recipe-category {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .recipe-category ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .recipe-category li {
-            margin: 0.5rem 0;
-        }
-
-        .recipe-category a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .recipe-category a:hover {
-            color: var(--secondary-color);
-            text-decoration: underline;
-        }
-    </style>
-<script src="components.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', loadComponents);
-    </script>
 </body>
-  </html>
+</html>
