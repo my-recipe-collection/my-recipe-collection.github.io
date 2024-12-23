@@ -1,6 +1,20 @@
 // recipes.js
 const recipes = [
     {
+    id: "whole-wheat-pancakes",
+    category: "breakfast",
+    dateAdded: "2024-12-23",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "100% Whole Wheat Pancakes",
+        he: "פנקייק מקמח מלא"
+    },
+    description: {
+        en: "Healthy and delicious whole wheat pancakes - perfect for breakfast!",
+        he: "פנקייק בריא וטעים מקמח מלא - מושלם לארוחת בוקר!"
+    }
+    },
+    {
     id: "homemade-donuts",
     category: "baking",
     dateAdded: "2024-12-22",
