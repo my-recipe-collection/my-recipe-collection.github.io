@@ -10,8 +10,8 @@ const recipes = [
         he: "רסק עגבניות ביתי"
     },
     description: {
-        en: "Homemade tomato dip - perfect for spreading or cooking!",
-        he: "רסק עגבניות ביתי - מושלם למריחה או לבישול!"
+        en: "Homemade tomato dip - perfect for eating with challah!",
+        he: "!ממרח עגבניות ביתי - מצוין עם חלה"
     }
 },
     {
