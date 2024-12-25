@@ -1,4 +1,4 @@
-// components.js
+// components.js?v=2.0
 
 const headerComponent = `
     <header class="header">
