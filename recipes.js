@@ -1,6 +1,20 @@
 // recipes.js
 const recipes = [
     {
+        {
+    id: "honey-garlic-green-beans",
+    category: "sides",
+    dateAdded: "2024-12-25",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Honey Garlic Green Beans",
+        he: "שעועית ירוקה ברוטב דבש ושום"
+    },
+    description: {
+        en: "Quick and flavorful side dish with a perfect balance of sweet and savory!",
+        he: "תוספת מהירה וטעימה עם איזון מושלם בין מתוק למלוח!"
+    }
+},
     id: "gingersnap-cookies",
     category: "baking",
     dateAdded: "2024-12-25",
