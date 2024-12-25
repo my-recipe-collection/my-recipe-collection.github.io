@@ -1,6 +1,20 @@
 // recipes.js 
 const recipes = [ 
     {
+    id: "yemenite-meat-soup",
+    category: "mains",
+    dateAdded: "2024-12-25",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Yemenite Meat Soup",
+        he: "מרק בשר תימני"
+    },
+    description: {
+        en: "Traditional Yemenite soup with beef, vegetables and aromatic hawaij spices",
+        he: "מרק תימני מסורתי עם בשר בקר, ירקות ותבלין חוויאג' ארומטי"
+    }
+},
+    {
     id: "whole-wheat-crepes",
     category: "breakfast",
     dateAdded: "2024-12-25",
