@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>All Recipes | כל המתכונים - Shai's Recipes</title>
+    <link rel="stylesheet" href="styles.css?h=f8e88fd5">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="main-content">
+        <div class="bilingual-grid">
+            <div class="english-content">
+                <h2>All Recipes</h2>
+            </div>
+            <div class="hebrew-content">
+                <h2>כל המתכונים</h2>
+            </div>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search recipes | חיפוש מתכונים" class="search-input">
+        </div>
+
+        <div class="recipe-list">
+            <div class="bilingual-grid">
+                <div class="english-content">
+                    <ul id="recipes-en"></ul>
+                </div>
+                <div class="hebrew-content">
+                    <ul id="recipes-he"></ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="recipes.js?h=10033269"></script>
+    <script src="components.js?h=011f4b4d"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponents();
+            
+            // Sort all recipes alphabetically by English title
+            const sortedRecipes = [...recipes].sort((a, b) => 
+                a.title.en.localeCompare(b.title.en)
+            );
+
+            function displayRecipes(filteredRecipes) {
+                // Populate English list
+                const recipesEnList = document.getElementById('recipes-en');
+                recipesEnList.innerHTML = '';
+                filteredRecipes.forEach(recipe => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<a href="${recipe.id}.html">${recipe.title.en}</a>`;
+                    recipesEnList.appendChild(li);
+                });
+
+                // Populate Hebrew list
+                const recipesHeList = document.getElementById('recipes-he');
+                recipesHeList.innerHTML = '';
+                filteredRecipes.forEach(recipe => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<a href="${recipe.id}.html">${recipe.title.he}</a>`;
+                    recipesHeList.appendChild(li);
+                });
+            }
+
+            // Initial display
+            displayRecipes(sortedRecipes);
+
+            // Search functionality
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                const filteredRecipes = sortedRecipes.filter(recipe => 
+                    recipe.title.en.toLowerCase().includes(searchTerm) || 
+                    recipe.title.he.includes(searchTerm)
+                );
+                displayRecipes(filteredRecipes);
+            });
+        });
+    </script>
+
+    <style>
+        .search-container {
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .search-input {
+            width: 100%;
+            max-width: 400px;
+            padding: 0.8rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 20px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: var(--secondary-color);
+        }
+
+        .recipe-list {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .recipe-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .recipe-list li {
+            margin: 0.5rem 0;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .recipe-list li:last-child {
+            border-bottom: none;
+        }
+
+        .recipe-list a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .recipe-list a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+    </style>
+</body>
+</html>

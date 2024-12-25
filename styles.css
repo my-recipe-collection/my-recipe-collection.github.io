@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+:root {
+    --primary-color: darkcyan;
+    --accent-color: #FFE66D;
+    --text-color: #2C3E50;
+    --background-color: #F7F9FC;
+    --font: 'Varela Round', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    text-align: center;
+    color: white;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    animation: bounce 1s;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 400;
+}
+
+.hebrew-content h1,
+.hebrew-content h2,
+.hebrew-content h3,
+.hebrew-content h4 {
+}
+
+.nav {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.25rem;
+    min-width: 120px;
+}
+
+.nav a:hover {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    flex: 1 0 auto;
+}
+
+/* Bilingual Grid */
+.bilingual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.english-content {
+    text-align: left;
+}
+
+.hebrew-content {
+    text-align: right;
+    direction: rtl;
+}
+
+/* Recipe Cards */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.recipe-card {
+    background: white;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-card a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.recipe-card h3 {
+    color: var(--primary-color);
+    margin: 1rem 0;
+}
+
+.recipe-card p {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.recipe-date {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+/* Recipe Template Specific Styles */
+.recipe-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.recipe-header img {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 1rem 0;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ingredients-section, .instructions-section {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ingredient-list {
+    list-style: none;
+    padding: 0;
+}
+
+.ingredient-list li {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.instruction-step h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.tips-section {
+    background: #fff3cd;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+    flex-shrink: 0;
+}
+
+img {
+    display: none;
+}
+
+
+/* Print Button Styling */
+.print-button {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 1rem 0;
+    transition: background-color 0.3s ease;
+    font-family: var(--font);
+}
+
+.print-button:hover {
+    background-color: #FFD700;
+}
+
+/* Search Styling */
+.search-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.recipe-search {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 20px;
+    font-size: 1.1rem;
+    transition: border-color 0.3s ease;
+}
+
+.recipe-search:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    .bilingual-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .nav a {
+        min-width: auto;
+    }
+}
+
+/* Print Styles */
+@media print {
+    /* Reset all margins and padding */
+    * {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: none !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    /* Hide unnecessary elements */
+    .nav, .footer, .print-button, .recipe-meta, .tips-section, #header-placeholder {
+        display: none !important;
+    }
+
+    /* Basic layout */
+    .main-content {
+        margin: 0 auto !important;
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    /* Only show site title once at the top */
+    .main-content::before {
+        content: "🍳 Shai's Recipes | המתכונים של שי";
+        display: block !important;
+        text-align: center;
+        font-size: 16pt;
+        margin-bottom: 10pt !important;
+        border-bottom: 1pt solid black !important;
+        padding-bottom: 5pt !important;
+    }
+
+    /* Recipe title */
+    .recipe-header h1 {
+        font-size: 14pt;
+        margin: 10pt 0 !important;
+        text-align: center;
+    }
+
+    /* Sections */
+    .ingredients-section, .instructions-section {
+        margin: 10pt 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Lists */
+    .ingredient-list, .instruction-step {
+        margin: 5pt 0 !important;
+    }
+
+    .ingredient-list li, .instruction-step {
+        margin-bottom: 3pt !important;
+    }
+
+    /* Grid layout for bilingual content */
+    .bilingual-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 20pt !important;
+    }
+    
+    /* Remove header image in print */
+    .recipe-header img {
+        display: none !important;
+    }
+}
