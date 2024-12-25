@@ -1,0 +1,26 @@
+name: Build and Deploy
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Generate hashes and update files
+        run: |
+          RECIPES_HASH=$(sha256sum recipes.js | cut -c1-8)
+          COMPONENTS_HASH=$(sha256sum components.js | cut -c1-8)
+          STYLES_HASH=$(sha256sum styles.css | cut -c1-8)
+          
+          find . -name "*.html" -type f -exec sed -i "s/recipes.js/recipes.js?h=$RECIPES_HASH/g" {} +
+          find . -name "*.html" -type f -exec sed -i "s/components.js/components.js?h=$COMPONENTS_HASH/g" {} +
+          find . -name "*.html" -type f -exec sed -i "s/styles.css/styles.css?h=$STYLES_HASH/g" {} +
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          branch: gh-pages
+          folder: .
