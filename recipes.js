@@ -1,7 +1,6 @@
 // recipes.js
 const recipes = [
     {
-        {
     id: "honey-garlic-green-beans",
     category: "sides",
     dateAdded: "2024-12-25",
@@ -15,6 +14,7 @@ const recipes = [
         he: "תוספת מהירה וטעימה עם איזון מושלם בין מתוק למלוח!"
     }
 },
+    {
     id: "gingersnap-cookies",
     category: "baking",
     dateAdded: "2024-12-25",
