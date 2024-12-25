@@ -11,7 +11,7 @@ const recipes = [
     },
     description: {
         en: "Homemade tomato dip - perfect for eating with challah!",
-        he: "!ממרח עגבניות ביתי - מצוין עם חלה"
+        he: "ממרח עגבניות ביתי - מצוין עם חלה!"
     }
 },
     {
