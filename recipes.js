@@ -160,11 +160,9 @@ function createRecipeCard(recipe) {
             <div class="bilingual-grid">
                 <div class="english-content">
                     <h3>${recipe.title.en}</h3>
-                    <p>${recipe.description.en}</p>
                 </div>
                 <div class="hebrew-content">
                     <h3>${recipe.title.he}</h3>
-                    <p>${recipe.description.he}</p>
                 </div>
             </div>
         </a>
