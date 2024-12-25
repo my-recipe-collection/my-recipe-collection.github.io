@@ -7,11 +7,11 @@ const recipes = [
     image: "/api/placeholder/400/300",
     title: {
         en: "Whole Wheat Crepes",
-        he: "קרפים מקמח מלא"
+        he: "קרפ מקמח מלא"
     },
     description: {
         en: "Healthy and delicious whole wheat crepes - perfect for breakfast or brunch!",
-        he: "קרפים מקמח מלא בריאים וטעימים - מושלמים לארוחת בוקר או בראנץ'!"
+        he: "קרפ מקמח מלא בריא וטעים - מושלם לארוחת בוקר או בראנץ'!"
     }
 },
     {
