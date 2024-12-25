@@ -1,6 +1,20 @@
 // recipes.js
 const recipes = [
     {
+    id: "potato-latkes",
+    category: "sides",
+    dateAdded: "2024-12-25",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Classic Potato Latkes",
+        he: "לביבות תפוחי אדמה קלאסיות"
+    },
+    description: {
+        en: "Crispy, golden potato pancakes - perfect as a side dish!",
+        he: "לביבות תפוחי אדמה פריכות וזהובות - מושלמות כתוספת!"
+    }
+},
+    {
     id: "whole-wheat-pancakes",
     category: "breakfast",
     dateAdded: "2024-12-23",
