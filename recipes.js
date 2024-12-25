@@ -1,6 +1,20 @@
 // recipes.js
 const recipes = [
     {
+    id: "gingersnap-cookies",
+    category: "baking",
+    dateAdded: "2024-12-25",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Gingersnap Cookies",
+        he: "עוגיות ג'ינג'ר פריכות"
+    },
+    description: {
+        en: "Crispy, spicy cookies with the perfect blend of ginger and cinnamon!",
+        he: "עוגיות פריכות עם שילוב מושלם של ג'ינג'ר וקינמון!"
+    }
+},
+    {
     id: "potato-latkes",
     category: "sides",
     dateAdded: "2024-12-25",
