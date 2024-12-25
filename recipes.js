@@ -1,6 +1,20 @@
 // recipes.js 
 const recipes = [ 
     {
+    id: "whole-wheat-crepes",
+    category: "breakfast",
+    dateAdded: "2024-12-25",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Whole Wheat Crepes",
+        he: "קרפים מקמח מלא"
+    },
+    description: {
+        en: "Healthy and delicious whole wheat crepes - perfect for breakfast or brunch!",
+        he: "קרפים מקמח מלא בריאים וטעימים - מושלמים לארוחת בוקר או בראנץ'!"
+    }
+},
+    {
     id: "resek-tomato-dip",
     category: "sides",
     dateAdded: "2024-12-25",
