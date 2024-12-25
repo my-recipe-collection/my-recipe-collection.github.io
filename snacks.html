@@ -6,9 +6,9 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>Main Dishes | מנות עיקריות - Shai's Recipes</title>
+    <title>Baking | חטיפים - Shai's Recipes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
    <div id="header-placeholder"></div>
@@ -17,32 +17,32 @@
         <div class="bilingual-grid">
             <!-- English Content -->
             <div class="english-content">
-                <h2>Main Dishes</h2>
-                <p>Delicious recipes for lunch and dinner!</p>
+                <h2>Tasty Snacks</h2>
+                <p>Delicious homemade snacks for any time of day!</p>
             </div>
             
             <!-- Hebrew Content -->
             <div class="hebrew-content">
-                <h2>מנות עיקריות</h2>
-                <p>מתכונים טעימים לארוחת צהריים וערב!</p>
+                <h2>חטיפים טעימים</h2>
+                <p>חטיפים ביתיים טעימים לכל שעות היום!</p>
             </div>
         </div>
 
         <div class="recipe-grid">
-            <!-- Recipes will be populated by JavaScript -->
+            <!-- This will be populated by recipes.js -->
         </div>
     </main>
 
 <div id="footer-placeholder"></div>
     <script src="recipes.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            populateCategoryPage('mains');
-        });
-    </script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        populateCategoryPage('snacks'); // This matches the category name in recipes.js
+    });
+</script>
 <script src="components.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', loadComponents);
     </script>
 </body>
-</html>
+      </html>
