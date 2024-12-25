@@ -56,20 +56,20 @@ const recipes = [
             he: "עוף מתוק עם נגיעה של סריראצ'ה - מושלם לכל המשפחה!"
         }
     },
-    {
+{
     id: "simple-cheesecake",
     category: "baking",
     dateAdded: "2024-12-22",
     image: "/api/placeholder/400/300",
     title: {
-        en: "Simple Israeli Cheesecake",
-        he: "עוגת גבינה פשוטה"
+        en: "Cheesecake with Fruit Topping",
+        he: "עוגת גבינה עם ציפוי פירות"
     },
     description: {
-        en: "Classic Israeli-style cheesecake made with white cheese - perfect for any occasion!",
-        he: "עוגת גבינה קלאסית בסגנון ישראלי - מושלמת לכל אירוע!"
+        en: "Creamy cheesecake topped with fresh berry compote - perfect for any occasion!",
+        he: "עוגת גבינה קרמית עם ציפוי פירות יער - מושלמת לכל אירוע!"
     }
-    },
+},
     {
     id: "powdered-sugar-cookies",
     category: "baking",
