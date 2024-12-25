@@ -1,6 +1,20 @@
 // recipes.js
 const recipes = [
     {
+    id: "resek-tomato-dip",
+    category: "sides",
+    dateAdded: "2024-12-25",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Resek (Tomato Dip)",
+        he: "רסק עגבניות ביתי"
+    },
+    description: {
+        en: "Homemade tomato dip - perfect for spreading or cooking!",
+        he: "רסק עגבניות ביתי - מושלם למריחה או לבישול!"
+    }
+},
+    {
     id: "honey-garlic-green-beans",
     category: "sides",
     dateAdded: "2024-12-25",
