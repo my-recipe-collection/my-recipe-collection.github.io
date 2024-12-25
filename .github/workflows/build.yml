@@ -14,13 +14,29 @@ jobs:
 
       - name: Generate hashes and update files
         run: |
+          # Generate hashes
           RECIPES_HASH=$(sha256sum recipes.js | cut -c1-8)
           COMPONENTS_HASH=$(sha256sum components.js | cut -c1-8)
           STYLES_HASH=$(sha256sum styles.css | cut -c1-8)
           
-          find . -name "*.html" -type f -exec sed -i "s/recipes.js/recipes.js?h=$RECIPES_HASH/g" {} +
-          find . -name "*.html" -type f -exec sed -i "s/components.js/components.js?h=$COMPONENTS_HASH/g" {} +
-          find . -name "*.html" -type f -exec sed -i "s/styles.css/styles.css?h=$STYLES_HASH/g" {} +
+          # Print hashes for debugging
+          echo "Generated hashes:"
+          echo "recipes.js: $RECIPES_HASH"
+          echo "components.js: $COMPONENTS_HASH"
+          echo "styles.css: $STYLES_HASH"
+          
+          # Show an example file before changes
+          echo "Before changes:"
+          cat index.html
+          
+          # Update files with more specific patterns
+          find . -name "*.html" -type f -exec sed -i 's/href="styles.css"/href="styles.css?h='$STYLES_HASH'"/' {} +
+          find . -name "*.html" -type f -exec sed -i 's/src="recipes.js"/src="recipes.js?h='$RECIPES_HASH'"/' {} +
+          find . -name "*.html" -type f -exec sed -i 's/src="components.js"/src="components.js?h='$COMPONENTS_HASH'"/' {} +
+          
+          # Show an example file after changes
+          echo "After changes:"
+          cat index.html
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
