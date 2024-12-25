@@ -1,5 +1,5 @@
 // recipes.js 
-const recipes = [
+const recipes = [ 
     {
     id: "resek-tomato-dip",
     category: "sides",
