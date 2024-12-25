@@ -1,6 +1,20 @@
 // recipes.js 
 const recipes = [ 
     {
+    id: "chicken-curry",
+    category: "mains",
+    dateAdded: "2024-12-25",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Easy Chicken or Turkey Curry",
+        he: "קארי עוף או הודו"
+    },
+    description: {
+        en: "A simple and delicious curry with chicken or turkey - perfect with rice!",
+        he: "קארי פשוט וטעים עם עוף או הודו - מושלם עם אורז!"
+    }
+},
+    {
     id: "yemenite-meat-soup",
     category: "mains",
     dateAdded: "2024-12-25",
