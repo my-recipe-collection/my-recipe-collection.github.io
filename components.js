@@ -3,7 +3,7 @@
 const headerComponent = `
 <header class="header">
         <h1>🍳 My Recipe Collection | אוסף המתכונים שלי 👨‍🍳</h1>
-        <p class="subtitle">From a kid who likes to cook | מילד שאוהב לבשל</p>
+        <p class="subtitle"> Recipes that kids like to make and eat | מתכונים שילדים אוהבים להכין ולאכול </p>
     </header>
 
     <nav class="nav">
