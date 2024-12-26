@@ -333,7 +333,7 @@ img {
 
     /* Only show site title once at the top */
     .main-content::before {
-        content: "🍳 Shai's Recipes | המתכונים של שי";
+        content: "🍳 My Recipe Collection | אוסף המתכונים שלי 👨‍🍳";
         display: block !important;
         text-align: center;
         font-size: 16pt;
