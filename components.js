@@ -20,7 +20,7 @@ const headerComponent = `
 
 const footerComponent = `
     <footer class="footer">
-        <p>YST | Copyright © 2024</p>
+        <p>Rivka Teller et al. | Copyright © 2024</p>
     </footer>
 `;
 
