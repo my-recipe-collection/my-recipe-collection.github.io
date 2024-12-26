@@ -1,8 +1,9 @@
 // components.js
 
 const headerComponent = `
-    <header class="header">
-        <h1>🍳 Shai's Recipes | המתכונים של שי 👨‍🍳</h1>
+<header class="header">
+        <h1>🍳 My Recipe Collection | אוסף המתכונים שלי 👨‍🍳</h1>
+        <p class="subtitle">From a kid who likes to cook | מילד שאוהב לבשל</p>
     </header>
 
     <nav class="nav">
@@ -19,7 +20,7 @@ const headerComponent = `
 
 const footerComponent = `
     <footer class="footer">
-        <p>Shai | שי | Copyright © 2024</p>
+        <p>YST | Copyright © 2024</p>
     </footer>
 `;
 
