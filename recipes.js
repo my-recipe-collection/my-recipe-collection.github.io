@@ -1,6 +1,20 @@
 // recipes.js 
 const recipes = [ 
     {
+    id: "sugar-cookies",
+    category: "baking",
+    dateAdded: "2024-12-26",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Easy Sugar Cookies",
+        he: "עוגיות סוכר קלות"
+    },
+    description: {
+        en: "No margarine, no chilling time needed! Perfect for Chanukah or any occasion.",
+        he: "ללא מרגרינה, ללא צורך בקירור! מושלמות לחנוכה או לכל אירוע."
+    }
+},
+    {
     id: "chicken-curry",
     category: "mains",
     dateAdded: "2024-12-25",
