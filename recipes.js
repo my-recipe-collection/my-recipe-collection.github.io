@@ -1,7 +1,7 @@
 // recipes.js 
 const recipes = [ 
     {
-    id: "sugar-cookies",
+    id: "sugar-cookies", 
     category: "baking",
     dateAdded: "2024-12-26",
     image: "/api/placeholder/400/300",
