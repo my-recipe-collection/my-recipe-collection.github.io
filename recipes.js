@@ -1,7 +1,7 @@
 // recipes.js  
 const recipes = [ 
     {
-    id: "grape-juice-chicken",
+        id: "grape-juice-chicken",
     category: "mains",
     dateAdded: "2024-12-27",
     image: "/api/placeholder/400/300",
@@ -10,9 +10,9 @@ const recipes = [
         he: "עוף במיץ ענבים"
     },
     description: {
-        en: "A perfect blend of grape juice and vinegar creates this delicious family favorite!",
-        he: "שילוב מושלם של מיץ ענבים וחומץ יוצר את המנה המשפחתית האהובה הזו!"
-    }
+        en: "An easy one-pan chicken dish with grape juice and vinegar!",
+        he: "מתכון קל להכנה בתבנית אחת עם מיץ ענבים וחומץ!"
+    },
     },
     {
     id: "sugar-cookies", 
