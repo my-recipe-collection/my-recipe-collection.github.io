@@ -1,6 +1,20 @@
 // recipes.js  
 const recipes = [ 
     {
+    id: "tastiest-spelt-challah",
+    category: "baking",
+    dateAdded: "2024-12-27",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "The Tastiest Spelt Challah",
+        he: "חלת הכוסמין הכי טעימה"
+    },
+    description: {
+        en: "Delicious challah made with 80% spelt flour",
+        he: "חלת כוסמין טעימה במיוחד"
+    }
+},
+    {
         id: "grape-juice-chicken",
     category: "mains",
     dateAdded: "2024-12-27",
