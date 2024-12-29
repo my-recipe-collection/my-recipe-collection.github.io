@@ -122,17 +122,21 @@ function addQuantityToggle() {
         const isDouble = toggle.getAttribute('aria-pressed') === 'false';
         toggle.setAttribute('aria-pressed', isDouble);
         
-        if (isDouble) {
-            toggle.innerHTML = '1️⃣ Original Recipe | מתכון מקורי';
-            // Double the amounts
-            ingredients.forEach((ing, index) => {
-                const text = originalAmounts[index];
-                const newText = text.replace(/(\d+\s+\d+\/\d+|\d+\/\d+|\d+(\.\d+)?)/g, match => {
-                    const num = toDecimal(match);
-                    return toFraction(num * 2);
-                });
-                ing.textContent = newText;
-            });
+if (isDouble) {
+    toggle.innerHTML = `
+        <div class="toggle-status">
+            <div>Recipe × 2 | מתכון × 2</div>
+            <div class="toggle-action">Click to halve | לחץ לחצי ⬇️</div>
+        </div>
+    `;
+} else {
+    toggle.innerHTML = `
+        <div class="toggle-status">
+            <div>Recipe × 1 | מתכון × 1</div>
+            <div class="toggle-action">Click to double | לחץ להכפלה ⬇️</div>
+        </div>
+    `;
+}
             
             // Update serving size
             metaItems.forEach(item => {
