@@ -292,6 +292,7 @@ img {
 
 .recipe-quantity-toggle {
     margin-bottom: 1rem;
+    display: none;
 }
 
 .quantity-toggle-button {
