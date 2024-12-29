@@ -117,26 +117,54 @@ function addQuantityToggle() {
         return decimal.toFixed(1).replace(/\.0$/, '');
     }
 
-    // Toggle handler
+// Toggle handler
     toggle.addEventListener('click', () => {
         const isDouble = toggle.getAttribute('aria-pressed') === 'false';
         toggle.setAttribute('aria-pressed', isDouble);
         
-if (isDouble) {
-    toggle.innerHTML = `
-        <div class="toggle-status">
-            <div>Recipe × 2 | מתכון × 2</div>
-            <div class="toggle-action">Click to halve | לחץ לחצי ⬇️</div>
-        </div>
-    `;
-} else {
-    toggle.innerHTML = `
-        <div class="toggle-status">
-            <div>Recipe × 1 | מתכון × 1</div>
-            <div class="toggle-action">Click to double | לחץ להכפלה ⬇️</div>
-        </div>
-    `;
-});
+        if (isDouble) {
+            toggle.innerHTML = `
+                <div class="toggle-status">
+                    <div>Recipe × 2 | מתכון × 2</div>
+                    <div class="toggle-action">Click to halve | לחץ לחצי ⬇️</div>
+                </div>
+            `;
+            // Double the amounts
+            ingredients.forEach((ing, index) => {
+                const text = originalAmounts[index];
+                const newText = text.replace(/(\d+\s+\d+\/\d+|\d+\/\d+|\d+(\.\d+)?)/g, match => {
+                    const num = toDecimal(match);
+                    return toFraction(num * 2);
+                });
+                ing.textContent = newText;
+            });
+            
+            // Update serving size
+            metaItems.forEach(item => {
+                if (item.textContent.includes('Makes') || item.textContent.includes('Serves')) {
+                    item.textContent = item.textContent.replace(/\d+/, match => parseInt(match) * 2);
+                }
+            });
+        } else {
+            toggle.innerHTML = `
+                <div class="toggle-status">
+                    <div>Recipe × 1 | מתכון × 1</div>
+                    <div class="toggle-action">Click to double | לחץ להכפלה ⬇️</div>
+                </div>
+            `;
+            // Restore original amounts
+            ingredients.forEach((ing, index) => {
+                ing.textContent = originalAmounts[index];
+            });
+            
+            // Restore original serving size
+            metaItems.forEach(item => {
+                if (item.textContent.includes('Makes') || item.textContent.includes('Serves')) {
+                    item.textContent = originalServings;
+                }
+            });
+        }
+    });
             
             // Update serving size
             metaItems.forEach(item => {
