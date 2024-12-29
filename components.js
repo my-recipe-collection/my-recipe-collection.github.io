@@ -48,7 +48,12 @@ function addQuantityToggle() {
     // Create toggle button
     const toggle = document.createElement('button');
     toggle.className = 'quantity-toggle-button';
-    toggle.innerHTML = '2️⃣ Double Recipe | מתכון כפול';
+    toggle.innerHTML = `
+        <div class="toggle-status">
+            <div>Recipe × 1 | מתכון × 1</div>
+            <div class="toggle-action">Click to double | לחץ להכפלה ⬇️</div>
+        </div>
+    `;
     toggle.setAttribute('aria-pressed', 'false');
 
     toggleContainer.appendChild(toggle);
@@ -69,6 +74,32 @@ function addQuantityToggle() {
 
     // Helper function to convert mixed number or fraction to decimal
     function toDecimal(amount) {
+        // Map of Unicode fractions to decimal values
+        const fractionMap = {
+            '¼': 0.25,
+            '½': 0.5,
+            '¾': 0.75,
+            '⅓': 0.333,
+            '⅔': 0.667,
+            '⅛': 0.125,
+            '⅜': 0.375,
+            '⅝': 0.625,
+            '⅞': 0.875
+        };
+
+        // Check if it's a Unicode fraction
+        if (fractionMap.hasOwnProperty(amount)) {
+            return fractionMap[amount];
+        }
+
+        // Check if it's a mixed number with Unicode fraction (e.g., "1½")
+        for (let fraction in fractionMap) {
+            if (amount.includes(fraction)) {
+                const [whole] = amount.split(fraction);
+                return parseInt(whole) + fractionMap[fraction];
+            }
+        }
+
         // Check if it's a mixed number (e.g., "1 1/2")
         if (amount.includes(' ')) {
             const [whole, fraction] = amount.split(' ');
@@ -86,17 +117,17 @@ function addQuantityToggle() {
 
     // Helper function to convert decimal to mixed number or fraction
     function toFraction(decimal) {
-        // Common fractions we want to preserve
+        // Common fractions we want to preserve with Unicode characters
         const commonFractions = {
-            0.25: '1/4',
-            0.5: '1/2',
-            0.75: '3/4',
-            0.125: '1/8',
-            0.375: '3/8',
-            0.625: '5/8',
-            0.875: '7/8',
-            0.333: '1/3',
-            0.667: '2/3'
+            0.25: '¼',
+            0.5: '½',
+            0.75: '¾',
+            0.333: '⅓',
+            0.667: '⅔',
+            0.125: '⅛',
+            0.375: '⅜',
+            0.625: '⅝',
+            0.875: '⅞'
         };
 
         // Get the whole number part
@@ -109,7 +140,7 @@ function addQuantityToggle() {
         // Check if the fraction part matches a common fraction
         for (let [dec, frac] of Object.entries(commonFractions)) {
             if (Math.abs(fraction - parseFloat(dec)) < 0.01) {
-                return whole > 0 ? `${whole} ${frac}` : frac;
+                return whole > 0 ? `${whole}${frac}` : frac;
             }
         }
 
@@ -117,7 +148,7 @@ function addQuantityToggle() {
         return decimal.toFixed(1).replace(/\.0$/, '');
     }
 
-// Toggle handler
+    // Toggle handler
     toggle.addEventListener('click', () => {
         const isDouble = toggle.getAttribute('aria-pressed') === 'false';
         toggle.setAttribute('aria-pressed', isDouble);
@@ -132,7 +163,7 @@ function addQuantityToggle() {
             // Double the amounts
             ingredients.forEach((ing, index) => {
                 const text = originalAmounts[index];
-                const newText = text.replace(/(\d+\s+\d+\/\d+|\d+\/\d+|\d+(\.\d+)?)/g, match => {
+                const newText = text.replace(/(\d*[¼½¾⅓⅔⅛⅜⅝⅞]|\d+\s+\d+\/\d+|\d+\/\d+|\d+(\.\d+)?)/g, match => {
                     const num = toDecimal(match);
                     return toFraction(num * 2);
                 });
@@ -152,28 +183,6 @@ function addQuantityToggle() {
                     <div class="toggle-action">Click to double | לחץ להכפלה ⬇️</div>
                 </div>
             `;
-            // Restore original amounts
-            ingredients.forEach((ing, index) => {
-                ing.textContent = originalAmounts[index];
-            });
-            
-            // Restore original serving size
-            metaItems.forEach(item => {
-                if (item.textContent.includes('Makes') || item.textContent.includes('Serves')) {
-                    item.textContent = originalServings;
-                }
-            });
-        }
-    });
-            
-            // Update serving size
-            metaItems.forEach(item => {
-                if (item.textContent.includes('Makes') || item.textContent.includes('Serves')) {
-                    item.textContent = item.textContent.replace(/\d+/, match => parseInt(match) * 2);
-                }
-            });
-        } else {
-            toggle.innerHTML = '2️⃣ Double Recipe | מתכון כפול';
             // Restore original amounts
             ingredients.forEach((ing, index) => {
                 ing.textContent = originalAmounts[index];
@@ -213,7 +222,7 @@ function loadComponents() {
         }
     });
 
-    // Add print button if on recipe page
+    // Add print button and quantity toggle if on recipe page
     if (document.querySelector('.recipe-header')) {
         addPrintButton();
         addQuantityToggle();
