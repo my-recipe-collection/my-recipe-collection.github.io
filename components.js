@@ -136,7 +136,7 @@ if (isDouble) {
             <div class="toggle-action">Click to double | לחץ להכפלה ⬇️</div>
         </div>
     `;
-}
+});
             
             // Update serving size
             metaItems.forEach(item => {
