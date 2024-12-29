@@ -67,6 +67,56 @@ function addQuantityToggle() {
         }
     });
 
+    // Helper function to convert mixed number or fraction to decimal
+    function toDecimal(amount) {
+        // Check if it's a mixed number (e.g., "1 1/2")
+        if (amount.includes(' ')) {
+            const [whole, fraction] = amount.split(' ');
+            const [numerator, denominator] = fraction.split('/').map(Number);
+            return parseInt(whole) + (numerator / denominator);
+        }
+        // Check if it's a fraction (e.g., "1/2")
+        if (amount.includes('/')) {
+            const [numerator, denominator] = amount.split('/').map(Number);
+            return numerator / denominator;
+        }
+        // Regular number
+        return parseFloat(amount);
+    }
+
+    // Helper function to convert decimal to mixed number or fraction
+    function toFraction(decimal) {
+        // Common fractions we want to preserve
+        const commonFractions = {
+            0.25: '1/4',
+            0.5: '1/2',
+            0.75: '3/4',
+            0.125: '1/8',
+            0.375: '3/8',
+            0.625: '5/8',
+            0.875: '7/8',
+            0.333: '1/3',
+            0.667: '2/3'
+        };
+
+        // Get the whole number part
+        const whole = Math.floor(decimal);
+        const fraction = decimal - whole;
+
+        // If it's a whole number, return it
+        if (fraction === 0) return whole.toString();
+
+        // Check if the fraction part matches a common fraction
+        for (let [dec, frac] of Object.entries(commonFractions)) {
+            if (Math.abs(fraction - parseFloat(dec)) < 0.01) {
+                return whole > 0 ? `${whole} ${frac}` : frac;
+            }
+        }
+
+        // If not a common fraction, return as decimal
+        return decimal.toFixed(1).replace(/\.0$/, '');
+    }
+
     // Toggle handler
     toggle.addEventListener('click', () => {
         const isDouble = toggle.getAttribute('aria-pressed') === 'false';
@@ -77,9 +127,9 @@ function addQuantityToggle() {
             // Double the amounts
             ingredients.forEach((ing, index) => {
                 const text = originalAmounts[index];
-                const newText = text.replace(/\d+(\.\d+)?/g, match => {
-                    const num = parseFloat(match);
-                    return (num * 2).toFixed(1).replace(/\.0$/, '');
+                const newText = text.replace(/(\d+\s+\d+\/\d+|\d+\/\d+|\d+(\.\d+)?)/g, match => {
+                    const num = toDecimal(match);
+                    return toFraction(num * 2);
                 });
                 ing.textContent = newText;
             });
