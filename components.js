@@ -37,6 +37,18 @@ function addPrintButton() {
     recipeHeader.appendChild(printButton);
 }
 
+function addQuantityToggle() {
+    const ingredientsSection = document.querySelector('.ingredients-section');
+    if (!ingredientsSection) return;
+
+    const toggleContainer = document.createElement('div');
+    toggleContainer.id = 'recipe-quantity-toggle';
+    ingredientsSection.insertBefore(toggleContainer, ingredientsSection.firstChild);
+
+    const root = ReactDOM.createRoot(toggleContainer);
+    root.render(React.createElement(RecipeQuantityToggle));
+}
+
 // Initialize Components
 function loadComponents() {
     // Load header
@@ -49,6 +61,11 @@ function loadComponents() {
     const footerPlaceholder = document.querySelector('#footer-placeholder');
     if (footerPlaceholder) {
         footerPlaceholder.innerHTML = footerComponent;
+    }
+
+            if (document.querySelector('.recipe-header')) {
+        addPrintButton();
+        addQuantityToggle(); // Add this line
     }
 
     // Highlight current page in navigation
