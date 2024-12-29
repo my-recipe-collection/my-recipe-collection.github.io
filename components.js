@@ -153,22 +153,23 @@ function addQuantityToggle() {
         const isDouble = toggle.getAttribute('aria-pressed') === 'false';
         toggle.setAttribute('aria-pressed', isDouble);
         
-        if (isDouble) {
-            toggle.innerHTML = `
-                <div class="toggle-status">
-                    <div>Recipe × 2 | מתכון × 2</div>
-                    <div class="toggle-action">Click to halve | לחץ לחצי ⬇️</div>
-                </div>
-            `;
-            // Double the amounts
-            ingredients.forEach((ing, index) => {
-                const text = originalAmounts[index];
-                const newText = text.replace(/(\d*[¼½¾⅓⅔⅛⅜⅝⅞]|\d+\s+\d+\/\d+|\d+\/\d+|\d+(\.\d+)?)/g, match => {
-                    const num = toDecimal(match);
-                    return toFraction(num * 2);
-                });
-                ing.textContent = newText;
-            });
+if (isDouble) {
+    toggle.innerHTML = `
+        <div class="toggle-status">
+            <div>Recipe × 2 | מתכון × 2</div>
+            <div class="toggle-action">Click to halve | לחץ לחצי ⬇️</div>
+        </div>
+    `;
+    // Double the amounts
+    ingredients.forEach((ing, index) => {
+        const text = originalAmounts[index];
+        // Only match numbers/fractions at the start of the ingredient
+        const newText = text.replace(/^(\d*[¼½¾⅓⅔⅛⅜⅝⅞]|\d+\s+\d+\/\d+|\d+\/\d+|\d+(\.\d+)?)/g, match => {
+            const num = toDecimal(match);
+            return toFraction(num * 2);
+        });
+        ing.textContent = newText;
+    });
             
             // Update serving size
             metaItems.forEach(item => {
