@@ -41,12 +41,70 @@ function addQuantityToggle() {
     const ingredientsSection = document.querySelector('.ingredients-section');
     if (!ingredientsSection) return;
 
+    // Create toggle container
     const toggleContainer = document.createElement('div');
-    toggleContainer.id = 'recipe-quantity-toggle';
+    toggleContainer.className = 'recipe-quantity-toggle';
+    
+    // Create toggle button
+    const toggle = document.createElement('button');
+    toggle.className = 'quantity-toggle-button';
+    toggle.innerHTML = '2️⃣ Double Recipe | מתכון כפול';
+    toggle.setAttribute('aria-pressed', 'false');
+
+    toggleContainer.appendChild(toggle);
     ingredientsSection.insertBefore(toggleContainer, ingredientsSection.firstChild);
 
-    const root = ReactDOM.createRoot(toggleContainer);
-    root.render(React.createElement(RecipeQuantityToggle));
+    // Store original values
+    const ingredients = document.querySelectorAll('.ingredient-list li');
+    const originalAmounts = Array.from(ingredients).map(ing => ing.textContent);
+    let originalServings = '';
+    
+    // Get original serving size
+    const metaItems = document.querySelectorAll('.meta-item');
+    metaItems.forEach(item => {
+        if (item.textContent.includes('Makes') || item.textContent.includes('Serves')) {
+            originalServings = item.textContent;
+        }
+    });
+
+    // Toggle handler
+    toggle.addEventListener('click', () => {
+        const isDouble = toggle.getAttribute('aria-pressed') === 'false';
+        toggle.setAttribute('aria-pressed', isDouble);
+        
+        if (isDouble) {
+            toggle.innerHTML = '1️⃣ Original Recipe | מתכון מקורי';
+            // Double the amounts
+            ingredients.forEach((ing, index) => {
+                const text = originalAmounts[index];
+                const newText = text.replace(/\d+(\.\d+)?/g, match => {
+                    const num = parseFloat(match);
+                    return (num * 2).toFixed(1).replace(/\.0$/, '');
+                });
+                ing.textContent = newText;
+            });
+            
+            // Update serving size
+            metaItems.forEach(item => {
+                if (item.textContent.includes('Makes') || item.textContent.includes('Serves')) {
+                    item.textContent = item.textContent.replace(/\d+/, match => parseInt(match) * 2);
+                }
+            });
+        } else {
+            toggle.innerHTML = '2️⃣ Double Recipe | מתכון כפול';
+            // Restore original amounts
+            ingredients.forEach((ing, index) => {
+                ing.textContent = originalAmounts[index];
+            });
+            
+            // Restore original serving size
+            metaItems.forEach(item => {
+                if (item.textContent.includes('Makes') || item.textContent.includes('Serves')) {
+                    item.textContent = originalServings;
+                }
+            });
+        }
+    });
 }
 
 // Initialize Components
@@ -63,11 +121,6 @@ function loadComponents() {
         footerPlaceholder.innerHTML = footerComponent;
     }
 
-            if (document.querySelector('.recipe-header')) {
-        addPrintButton();
-        addQuantityToggle(); // Add this line
-    }
-
     // Highlight current page in navigation
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav a');
@@ -81,6 +134,7 @@ function loadComponents() {
     // Add print button if on recipe page
     if (document.querySelector('.recipe-header')) {
         addPrintButton();
+        addQuantityToggle();
     }
 }
 
