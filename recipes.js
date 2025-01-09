@@ -15,6 +15,20 @@ const recipes = [
     }
 },
     {
+    id: "chocolate-babka",
+    category: "baking",
+    dateAdded: "2024-01-09",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Chocolate Babka with Crumble",
+        he: "בבקה שוקולד עם שטרויזל"
+    },
+    description: {
+        en: "Rich chocolate-filled babka topped with a delicious crumble - perfect for any occasion!",
+        he: "בבקה עשירה במלית שוקולד ושטרויזל מפנק - מושלמת לכל אירוע!"
+    }
+    },
+    {
         id: "grape-juice-chicken",
     category: "mains",
     dateAdded: "2024-12-27",
