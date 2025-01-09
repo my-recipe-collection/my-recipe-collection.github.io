@@ -226,7 +226,7 @@ function loadComponents() {
     // Add print button and quantity toggle if on recipe page
     if (document.querySelector('.recipe-header')) {
         addPrintButton();
-        addQuantityToggle();
+
     }
 }
 
