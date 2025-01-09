@@ -17,7 +17,7 @@ const recipes = [
     {
     id: "chocolate-babka",
     category: "baking",
-    dateAdded: "2024-01-09",
+    dateAdded: "2025-01-09",
     image: "/api/placeholder/400/300",
     title: {
         en: "Chocolate Babka with Crumble",
