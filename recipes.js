@@ -1,6 +1,20 @@
 // recipes.js  
 const recipes = [ 
     {
+    id: "lemon-pound-cake",
+    category: "baking",
+    dateAdded: "2024-01-10",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Glazed Lemon Pound Cake",
+        he: "עוגת לימון"
+    },
+    description: {
+        en: "Moist, lemony pound cake with a sweet-tart glaze - makes two loaves!",
+        he: "עוגת לימון עסיסית עם ציפוי מתוק-חמצמץ - מתכון לשתי עוגות!"
+    }
+    },
+    {
     id: "easy-spicy-maple-wings",
     category: "mains",
     dateAdded: "2025-01-10",
