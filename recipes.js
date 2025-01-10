@@ -3,7 +3,7 @@ const recipes = [
     {
     id: "easy-spicy-maple-wings",
     category: "mains",
-    dateAdded: "2024-01-10",
+    dateAdded: "2025-01-10",
     image: "/api/placeholder/400/300",
     title: {
         en: "Easy Spicy Maple Wings",
