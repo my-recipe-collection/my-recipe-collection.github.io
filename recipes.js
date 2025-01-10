@@ -3,7 +3,7 @@ const recipes = [
     {
     id: "lemon-pound-cake",
     category: "baking",
-    dateAdded: "2024-01-10",
+    dateAdded: "2025-01-10",
     image: "/api/placeholder/400/300",
     title: {
         en: "Glazed Lemon Pound Cake",
