@@ -1,6 +1,20 @@
 // recipes.js  
 const recipes = [ 
     {
+    id: "easy-spicy-maple-wings",
+    category: "mains",
+    dateAdded: "2024-01-10",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Easy Spicy Maple Wings",
+        he: "כנפיים חריפות במייפל - הכי קל שיש"
+    },
+    description: {
+        en: "Super easy one-pan spicy wings - just pour and bake!",
+        he: "כנפיים חריפות בתבנית אחת - פשוט שופכים ואופים!"
+    }
+    },
+    {
     id: "tastiest-spelt-challah",
     category: "baking",
     dateAdded: "2024-12-27",
