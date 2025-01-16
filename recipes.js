@@ -1,6 +1,20 @@
 // recipes.js  
 const recipes = [ 
     {
+    id: "sprinkle-cookies",
+    category: "baking",
+    dateAdded: "2025-01-16",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Sprinkle Cookies",
+        he: "עוגיות עם סוכריות צבעוניות"
+    },
+    description: {
+        en: "Simple and fun cookies topped with colorful sprinkles - perfect for kids!",
+        he: "עוגיות פשוטות וכיפיות עם סוכריות צבעוניות - מושלמות לילדים!"
+    }
+},
+    {
     id: "lemon-pound-cake",
     category: "baking",
     dateAdded: "2025-01-10",
