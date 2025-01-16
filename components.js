@@ -22,7 +22,7 @@ const headerComponent = `
 const footerComponent = `
     <footer class="footer">
         <div class="footer-content">
-            <p>Copyright © 2024</p>
+            <p>Copyright Rivka Teller et al. © 2024</p>
             <p class="footer-disclaimer">These recipes have been collected and adapted over time from various sources including family, friends, cookbooks, and websites. While we may not remember all original sources, we're grateful to everyone who has contributed to the world of cooking and baking.</p>
             <p class="footer-disclaimer" dir="rtl">מתכונים אלה נאספו ועובדו במשך הזמן ממקורות שונים כולל משפחה, חברים, ספרי בישול ואתרי אינטרנט. למרות שאיננו זוכרים את כל המקורות המקוריים, אנו מודים לכל מי שתרם לעולם הבישול והאפייה.</p>
         </div>
