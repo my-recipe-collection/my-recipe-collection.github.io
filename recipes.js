@@ -3,7 +3,7 @@ const recipes = [
     {
     id: "rustic-bread",
     category: "baking",
-    dateAdded: "2024-01-19",
+    dateAdded: "2025-01-19",
     image: "/api/placeholder/400/300",
     title: {
         en: "Easy No-Knead Rustic Bread",
