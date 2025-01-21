@@ -1,6 +1,20 @@
 // recipes.js  
 const recipes = [ 
     {
+    id: "rustic-bread",
+    category: "baking",
+    dateAdded: "2024-01-19",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Easy No-Knead Rustic Bread",
+        he: "לחם כפרי קל ללא לישה"
+    },
+    description: {
+        en: "Simple, rustic bread that requires no kneading - perfect for beginners!",
+        he: "לחם כפרי פשוט שלא דורש לישה - מושלם למתחילים!"
+    }
+    },
+    {
     id: "sprinkle-cookies",
     category: "baking",
     dateAdded: "2025-01-16",
