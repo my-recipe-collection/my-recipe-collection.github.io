@@ -1,6 +1,20 @@
 // recipes.js  
 const recipes = [ 
     {
+    id: "hamburger-soup",
+    category: "mains",
+    dateAdded: "2025-01-21",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Hamburger Soup",
+        he: "מרק המבורגר"
+    },
+    description: {
+        en: "A hearty and warming soup loaded with ground beef and vegetables!",
+        he: "מרק מחמם ומשביע עם בשר טחון וירקות!"
+    }
+    },
+    {
     id: "rustic-bread",
     category: "baking",
     dateAdded: "2025-01-19",
