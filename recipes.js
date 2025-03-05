@@ -1,6 +1,20 @@
 // recipes.js  
 const recipes = [ 
     {
+    id: "brownie-hamantaschen",
+    category: "baking",
+    dateAdded: "2025-03-05",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Brownie Hamantaschen",
+        he: "אוזני המן בראוניז"
+    },
+    description: {
+        en: "Delicious three-cornered cookies filled with rich brownie mixture and drizzled with chocolate!",
+        he: "עוגיות משולשות טעימות במילוי בראוניז עשיר ומקושטות בשוקולד!"
+    }
+},
+    {
     id: "hamburger-soup",
     category: "mains",
     dateAdded: "2025-01-21",
