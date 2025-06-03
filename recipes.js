@@ -1,6 +1,20 @@
 // recipes.js  
 const recipes = [ 
     {
+    id: "quick-focaccia",
+    category: "baking", 
+    dateAdded: "2025-06-03",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Quick Focaccia",
+        he: "פוקצ'ה מהירה"
+    },
+    description: {
+        en: "Delicious homemade focaccia ready in just 90 minutes!",
+        he: "פוקצ'ה ביתית טעימה מוכנה תוך 90 דקות בלבד!"
+    }
+    },
+    {
     id: "brownie-hamantaschen",
     category: "baking",
     dateAdded: "2025-03-05",
