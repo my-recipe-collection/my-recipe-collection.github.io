@@ -3,7 +3,7 @@ const recipes = [
     {
     id: "ultimate-oreo-cake",
     category: "baking",
-    dateAdded: "2025-01-20",
+    dateAdded: "2025-06-19",
     image: "/api/placeholder/400/300",
     title: {
         en: "Ultimate Oreo Cake",
