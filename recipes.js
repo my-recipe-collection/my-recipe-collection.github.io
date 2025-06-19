@@ -1,6 +1,20 @@
 // recipes.js  
 const recipes = [ 
     {
+    id: "ultimate-oreo-cake",
+    category: "baking",
+    dateAdded: "2025-01-20",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Ultimate Oreo Cake",
+        he: "עוגת אוריאו מושלמת"
+    },
+    description: {
+        en: "Rich, moist chocolate cake packed with Oreo cookies and topped with creamy Oreo buttercream!",
+        he: "עוגת שוקולד עשירה ולחה עם עוגיות אוריאו וקרם חמאה אוריאו!"
+    }
+    },
+    {
     id: "quick-focaccia",
     category: "baking", 
     dateAdded: "2025-06-03",
