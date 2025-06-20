@@ -1,5 +1,19 @@
 // recipes.js 
 const recipes = [ 
+{
+    id: "kneidelach",
+    category: "sides",
+    dateAdded: "2025-06-20",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Kneidelach",
+        he: "קניידלך"
+    },
+    description: {
+        en: "Traditional matzo ball soup dumplings - perfect for any soup!",
+        he: "קניידלך מסורתיים - מושלמים לכל מרק!"
+    }
+},
     {
     id: "ultimate-oreo-cake",
     category: "baking",
