@@ -1,5 +1,19 @@
 // recipes.js 
 const recipes = [ 
+    {
+    id: "shepherds-pie",
+    category: "mains",
+    dateAdded: "2025-06-25",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Shepherd's Pie",
+        he: "פאי רועים"
+    },
+    description: {
+        en: "Classic comfort food with seasoned ground beef and creamy mashed potatoes!",
+        he: "אוכל נוחות קלאסי עם בשר טחון מתובל ופירה קרמית!"
+    }
+    },
 {
     id: "kneidelach",
     category: "sides",
