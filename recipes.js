@@ -3,7 +3,7 @@ const recipes = [
     {
     id: "classic-chicken-soup",
     category: "mains",
-    dateAdded: "2025-01-04",
+    dateAdded: "2025-07-04",
     image: "/api/placeholder/400/300",
     title: {
         en: "Classic Chicken Soup",
