@@ -1,6 +1,20 @@
 // recipes.js 
 const recipes = [ 
     {
+    id: "bbq-chicken-rice",
+    category: "mains",
+    dateAdded: "2025-07-04",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "BBQ Chicken and Rice",
+        he: "עוף בברביקיו עם אורז"
+    },
+    description: {
+        en: "One-pan BBQ chicken and rice with homemade sauce - perfect family dinner!",
+        he: "עוף בברביקיו עם אורז בתבנית אחת עם רוטב ביתי - ארוחת משפחה מושלמת!"
+    }
+},
+    {
     id: "potato-kugel",
     category: "sides",
     dateAdded: "2025-07-04",
