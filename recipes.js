@@ -1,6 +1,20 @@
 // recipes.js 
 const recipes = [ 
     {
+    id: "classic-chicken-soup",
+    category: "mains",
+    dateAdded: "2025-01-04",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Classic Chicken Soup",
+        he: "מרק עוף קלאסי"
+    },
+    description: {
+        en: "Comforting homemade chicken soup that's perfect for any season!",
+        he: "מרק עוף ביתי מנחם שמושלם לכל עונה!"
+    }
+},
+    {
     id: "shepherds-pie",
     category: "mains",
     dateAdded: "2025-06-25",
