@@ -1,6 +1,20 @@
 // recipes.js 
 const recipes = [ 
     {
+    id: "potato-kugel",
+    category: "sides",
+    dateAdded: "2025-07-04",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Potato Kugel",
+        he: "קוגל תפוחי אדמה"
+    },
+    description: {
+        en: "Traditional golden potato kugel that's crispy outside and tender inside!",
+        he: "קוגל תפוחי אדמה מסורתי וזהוב שקריספי מבחוץ ורך מבפנים!"
+    }
+},
+    {
     id: "classic-chicken-soup",
     category: "mains",
     dateAdded: "2025-07-04",
