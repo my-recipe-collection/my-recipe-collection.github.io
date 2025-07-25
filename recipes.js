@@ -1,6 +1,20 @@
 // recipes.js 
 const recipes = [ 
     {
+    id: "sushi-rice",
+    category: "sides",
+    dateAdded: "2025-07-25",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Simple Sushi Rice",
+        he: "אורז סושי פשוט"
+    },
+    description: {
+        en: "Perfect sushi rice with the right balance of sweetness and acidity!",
+        he: "אורז סושי מושלם עם איזון נכון של מתיקות וחומציות!"
+    }
+    },
+    {
     id: "bbq-chicken-rice",
     category: "mains",
     dateAdded: "2025-07-04",
