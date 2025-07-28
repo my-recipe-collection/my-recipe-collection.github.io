@@ -2,11 +2,11 @@
 const recipes = [ {
     id: "pizza-dough",
     category: "mains",
-    dateAdded: "2025-01-28",
+    dateAdded: "2025-07-28",
     image: "/api/placeholder/400/300",
     title: {
-        en: "Personal Pizza Dough",
-        he: "בצק לפיצה אישית"
+        en: "Pizza Dough",
+        he: "בצק לפיצה"
     },
     description: {
         en: "Perfect homemade pizza dough recipe for individual pizzas - makes 10-12 personal pies!",
