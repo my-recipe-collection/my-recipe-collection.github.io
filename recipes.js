@@ -1,5 +1,18 @@
 // recipes.js 
-const recipes = [ 
+const recipes = [ {
+    id: "pizza-dough",
+    category: "mains",
+    dateAdded: "2025-01-28",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Personal Pizza Dough",
+        he: "בצק לפיצה אישית"
+    },
+    description: {
+        en: "Perfect homemade pizza dough recipe for individual pizzas - makes 10-12 personal pies!",
+        he: "מתכון מושלם לבצק פיצה ביתי לפיצות אישיות - מספיק ל-10-12 פיצות!"
+    }
+},
     {
     id: "sushi-rice",
     category: "sides",
