@@ -1,5 +1,21 @@
 // recipes.js 
-const recipes = [ {
+const recipes = [
+    
+    {
+    id: "hershey-chocolate-cake",
+    category: "baking",
+    dateAdded: "2025-08-15",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Hershey's Perfect Chocolate Cake",
+        he: "עוגת שוקולד מושלמת של הרשי"
+    },
+    description: {
+        en: "Rich, moist chocolate cake that's perfect for any celebration!",
+        he: "עוגת שוקולד עשירה ולחה שמושלמת לכל חגיגה!"
+    }
+    },
+    {
     id: "pizza-dough",
     category: "mains",
     dateAdded: "2025-07-28",
