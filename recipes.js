@@ -4,7 +4,7 @@ const recipes = [
     {
     id: "lasagna",
     category: "mains",
-    dateAdded: "2025-01-15",
+    dateAdded: "2025-09-15",
     image: "/api/placeholder/400/300",
     title: {
         en: "Fresh Cherry Tomato Lasagna",
