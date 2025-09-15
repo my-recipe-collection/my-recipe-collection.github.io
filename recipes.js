@@ -1,5 +1,20 @@
 // recipes.js 
 const recipes = [
+
+    {
+    id: "lasagna",
+    category: "mains",
+    dateAdded: "2025-01-15",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Fresh Cherry Tomato Lasagna",
+        he: "לזניה עם עגבניות שרי טריות"
+    },
+    description: {
+        en: "Delicious vegetarian lasagna with fresh cherry tomatoes and red peppers!",
+        he: "לזניה צמחונית טעימה עם עגבניות שרי טריות ופלפלים אדומים!"
+    }
+    },
     
     {
     id: "hershey-chocolate-cake",
