@@ -4,7 +4,7 @@ const recipes = [
     {
     id: "honey-carrot-basmati-rice",
     category: "sides",
-    dateAdded: "2025-01-15",
+    dateAdded: "2025-09-16",
     image: "/api/placeholder/400/300",
     title: {
         en: "Honey Carrot Basmati Rice Pilaf",
