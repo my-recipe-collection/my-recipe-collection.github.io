@@ -2,6 +2,21 @@
 const recipes = [
 
     {
+    id: "honey-carrot-basmati-rice",
+    category: "sides",
+    dateAdded: "2025-01-15",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Honey Carrot Basmati Rice Pilaf",
+        he: "פילאף אורז בסמטי עם גזר ודבש"
+    },
+    description: {
+        en: "Fragrant basmati rice pilaf with sweet shredded carrots, honey, and optional raisins - a perfect side dish!",
+        he: "פילאף אורז בסמטי ארומטי עם גזר מגורד מתוק, דבש וצימוקים לא חובה - תוספת מושלמת!"
+    }
+    },
+
+    {
     id: "lasagna",
     category: "mains",
     dateAdded: "2025-09-15",
