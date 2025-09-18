@@ -1,5 +1,17 @@
 // recipes.js 
 const recipes = [
+    { id: "apple-crumb-pie",
+    category: "baking",
+    dateAdded: "2025-09-18",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Apple Crumb Pie",
+        he: "פאי תפוחים עם פירורים"
+    },
+    description: {
+        en: "Delicious dairy-free apple pie with a perfect crumbly topping - no butter or margarine needed!",
+        he: "פאי תפוחים טעים פרווה עם ציפוי פירורים מושלם - ללא חמאה או מרגרינה!"
+    },
 {
     id: "honey-cake",
     category: "baking", 
