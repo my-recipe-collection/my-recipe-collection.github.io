@@ -354,7 +354,7 @@ const recipes = [
 },
     {
     id: "whole-wheat-crepes",
-    category: "breakfast",
+    category: "baking",
     dateAdded: "2024-12-25",
     image: "/api/placeholder/400/300",
     title: {
@@ -424,7 +424,7 @@ const recipes = [
 },
     {
     id: "whole-wheat-pancakes",
-    category: "breakfast",
+    category: "baking",
     dateAdded: "2024-12-23",
     image: "/api/placeholder/400/300",
     title: {
