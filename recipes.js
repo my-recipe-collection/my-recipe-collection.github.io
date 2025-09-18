@@ -1,6 +1,19 @@
 // recipes.js 
 const recipes = [
-
+{
+    id: "honey-cake",
+    category: "baking", 
+    dateAdded: "2025-09-18",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Majestic and Moist Honey Cake",
+        he: "עוגת דבש לחה ומושלמת"
+    },
+    description: {
+        en: "A traditional honey cake that's incredibly moist and flavorful - perfect for holidays!",
+        he: "עוגת דבש מסורתית שהיא לחה ומלאת טעם במיוחד - מושלמת לחגים!"
+    }
+},
     {
     id: "honey-carrot-basmati-rice",
     category: "sides",
