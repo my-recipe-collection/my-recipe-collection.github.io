@@ -7,7 +7,7 @@ const recipes = [
     title: {
         en: "Apple Crumb Pie",
         he: "פאי תפוחים עם פירורים"
-    }
+    },
     description: {
         en: "Delicious dairy-free apple pie with a perfect crumbly topping - no butter or margarine needed!",
         he: "פאי תפוחים טעים פרווה עם ציפוי פירורים מושלם - ללא חמאה או מרגרינה!"
