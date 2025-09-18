@@ -8,8 +8,7 @@ const headerComponent = `
 
     <nav class="nav">
         <ul>
-            <li><a href="index.html"><span>Home</span><span>בית</span></a></li>
-            <li><a href="breakfast.html"><span>Breakfast</span><span>ארוחת בוקר</span></a></li>
+            <li><a href="index.html"><span>Home</span><span>בית</span></a></li>            
             <li><a href="mains.html"><span>Main Dishes</span><span>מנות עיקריות</span></a></li>
             <li><a href="sides.html"><span>Side Dishes</span><span>תוספות</span></a></li>
             <li><a href="baking.html"><span>Baking</span><span>אפיה</span></a></li>
