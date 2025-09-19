@@ -1,5 +1,19 @@
 // recipes.js 
 const recipes = [
+    {
+    id: "one-bowl-cinnamon-swirl-cake",
+    category: "baking",
+    dateAdded: "2025-01-15",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "One-Bowl Cinnamon Swirl Cake",
+        he: "עוגת קינמון בקערה אחת"
+    },
+    description: {
+        en: "Simple and delicious cinnamon swirl cake made in one bowl!",
+        he: "עוגת קינמון פשוטה וטעימה הנעשית בקערה אחת!"
+    }
+    },
     { id: "apple-crumb-pie",
     category: "baking",
     dateAdded: "2025-09-18",
