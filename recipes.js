@@ -3,7 +3,7 @@ const recipes = [
     {
     id: "one-bowl-cinnamon-swirl-cake",
     category: "baking",
-    dateAdded: "2025-01-15",
+    dateAdded: "2025-09-19",
     image: "/api/placeholder/400/300",
     title: {
         en: "One-Bowl Cinnamon Swirl Cake",
