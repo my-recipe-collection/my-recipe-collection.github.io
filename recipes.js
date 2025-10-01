@@ -1,6 +1,20 @@
 // recipes.js 
 const recipes = [
     {
+    id: "bagels",
+    category: "baking",
+    dateAdded: "2025-10-01",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Bagels",
+        he: "בייגלס"
+    },
+    description: {
+        en: "Homemade bagels with the classic boil-then-bake method!",
+        he: "בייגלס ביתיים בשיטה הקלאסית של הרתחה ואפייה!"
+    }
+    },
+    {
     id: "one-bowl-cinnamon-swirl-cake",
     category: "baking",
     dateAdded: "2025-09-19",
