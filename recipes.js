@@ -1,6 +1,20 @@
 // recipes.js 
 const recipes = [
     {
+    id: "unstuffed-cabbage",
+    category: "mains",
+    dateAdded: "2025-10-06",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Unstuffed Cabbage",
+        he: "כרוב ממולא לא ממולא"
+    },
+    description: {
+        en: "All the flavors of stuffed cabbage without the work!",
+        he: "כל הטעמים של כרוב ממולא בלי העבודה!"
+    }
+    },
+    {
     id: "bagels",
     category: "baking",
     dateAdded: "2025-10-01",
