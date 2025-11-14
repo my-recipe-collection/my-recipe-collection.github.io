@@ -1,6 +1,20 @@
 // recipes.js 
 const recipes = [
     {
+    id: "courgettes-tomato-sauce",
+    category: "sides",
+    dateAdded: "2025-11-14",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Courgettes in Tomato Sauce with Olives",
+        he: "קישואים ברוטב עגבניות עם זיתים"
+    },
+    description: {
+        en: "Tender courgettes in a flavorful tomato sauce with olives - perfect hot or cold!",
+        he: "קישואים רכים ברוטב עגבניות עם זיתים - מושלם חם או קר!"
+    }
+},
+    {
     id: "unstuffed-cabbage",
     category: "mains",
     dateAdded: "2025-10-06",
