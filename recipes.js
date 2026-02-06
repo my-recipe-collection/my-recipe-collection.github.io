@@ -1,6 +1,20 @@
 // recipes.js 
 const recipes = [
     {
+    id: "coffee-crinkle-cookies",
+    category: "baking",
+    dateAdded: "2026-02-06",
+    image: "/api/placeholder/400/300",
+    title: {
+        en: "Coffee Crinkle Cookies",
+        he: "עוגיות קפה קמוטות"
+    },
+    description: {
+        en: "Soft coffee cookies with a beautiful crinkled sugar coating!",
+        he: "עוגיות קפה רכות עם ציפוי סוכר קמוט ויפהפה!"
+    }
+    },
+    {
     id: "courgettes-tomato-sauce",
     category: "sides",
     dateAdded: "2025-11-14",
